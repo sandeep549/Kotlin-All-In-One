@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.delegates
 
-import com.example.kotlinsamples.DemoFragment
 import kotlin.reflect.KProperty
 
 fun main() {
