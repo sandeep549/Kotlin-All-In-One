@@ -7,7 +7,7 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 fun main() {
-    var settings: Settings() // we need context here somehow to test it
+    //var settings: Settings() // we need context here somehow to test it
 }
 
 class Settings(context: Context) {
