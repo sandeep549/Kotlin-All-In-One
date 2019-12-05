@@ -14,12 +14,19 @@ fun main() {
 class DemoFragment : Fragment() {
     private var param1: Int by argument()
     private var param2: String by argument()
+
     companion object {
         fun newInstance(param1: Int, param2: String): DemoFragment =
             DemoFragment().apply {
                 this.param1 = param1
                 this.param2 = param2
             }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        println(param1)
+        println(param2)
     }
 }
 
@@ -45,12 +52,14 @@ fun <T> Bundle.put(key: String, value: T) {
         else -> throw IllegalStateException("Type of property $key is not supported")
     }
 }
+
 class FragmentArgumentDelegate<T : Any> : ReadWriteProperty<Fragment, T> {
 
     @Suppress("UNCHECKED_CAST")
     override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
         val key = property.name
-        return thisRef.arguments?.get(key) as? T ?: throw IllegalStateException("Property ${property.name} could not be read")
+        return thisRef.arguments?.get(key) as? T
+            ?: throw IllegalStateException("Property ${property.name} could not be read")
     }
 
     override fun setValue(thisRef: Fragment, property: KProperty<*>, value: T) {
