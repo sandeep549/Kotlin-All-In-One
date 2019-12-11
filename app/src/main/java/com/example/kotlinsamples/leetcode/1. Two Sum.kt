@@ -7,7 +7,7 @@ fun main() {
     println(twoSum4(intArrayOf(2, 11, 7, 15), 9).toList())
 }
 
-fun twoSum(nums: IntArray, target: Int): IntArray {
+private fun twoSum(nums: IntArray, target: Int): IntArray {
     nums.forEachIndexed { fi, first ->
         nums.forEachIndexed { si, second ->
             if (first + second == target) return intArrayOf(
@@ -19,7 +19,7 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
     return intArrayOf()
 }
 
-fun twoSum2(nums: IntArray, target: Int): IntArray {
+private fun twoSum2(nums: IntArray, target: Int): IntArray {
     for (i in 0 until nums.size - 1) {
         for (j in i + 1 until nums.size) {
             if (nums[i] + nums[j] == target) return intArrayOf(i, j)
@@ -28,7 +28,7 @@ fun twoSum2(nums: IntArray, target: Int): IntArray {
     return intArrayOf()
 }
 
-fun twoSum3(nums: IntArray, target: Int): IntArray {
+private fun twoSum3(nums: IntArray, target: Int): IntArray {
     val map = HashMap<Int, Int>()
     for (i in nums.indices) {
         if (map.containsKey(target - nums[i])) {
@@ -39,7 +39,7 @@ fun twoSum3(nums: IntArray, target: Int): IntArray {
     return intArrayOf()
 }
 
-fun twoSum4(nums: IntArray, target: Int): IntArray {
+private fun twoSum4(nums: IntArray, target: Int): IntArray {
     var x = -1;
     var y = -1;
     for (i in nums.indices) {
