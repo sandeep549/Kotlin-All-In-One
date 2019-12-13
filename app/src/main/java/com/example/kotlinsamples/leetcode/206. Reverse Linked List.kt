@@ -1,8 +1,5 @@
 package com.example.kotlinsamples.leetcode
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
 
 // iterative
 private fun reverseList(head: ListNode): ListNode? {
