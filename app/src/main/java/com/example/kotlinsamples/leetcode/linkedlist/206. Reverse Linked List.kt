@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode
+package com.example.kotlinsamples.leetcode.linkedlist
 
 
 // iterative

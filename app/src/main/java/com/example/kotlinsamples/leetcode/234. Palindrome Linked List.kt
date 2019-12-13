@@ -1,5 +1,7 @@
 package com.example.kotlinsamples.leetcode
 
+import com.example.kotlinsamples.leetcode.linkedlist.ListNode
+
 
 // Solution-1
 fun isPalindrome(head: ListNode?): Boolean {
