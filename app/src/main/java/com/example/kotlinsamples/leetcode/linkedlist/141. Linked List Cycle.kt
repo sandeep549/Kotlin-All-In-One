@@ -1,5 +1,9 @@
 package com.example.kotlinsamples.leetcode.linkedlist
 
+fun main() {
+
+}
+
 private fun hasCycle(head: ListNode?): Boolean {
     var visited = HashSet<ListNode>()
     var curr = head
