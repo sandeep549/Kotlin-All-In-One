@@ -1,5 +1,18 @@
 package com.example.kotlinsamples.leetcode.array
 
+private fun majorityElement(nums: IntArray): Int {
+    for (i in 0 until nums.lastIndex) {
+        var cnt = 1
+        for (j in i + 1..nums.lastIndex) {
+            if (nums[i] == nums[j]) {
+                cnt++
+                if (cnt > nums.size / 2) return i
+            }
+        }
+    }
+    return nums[0]
+}
+
 // By Map
 private fun majorityElement1(nums: IntArray): Int {
     var map = HashMap<Int, Int>()

@@ -37,7 +37,8 @@ private fun moveZeroes3(nums: IntArray) {
     var lastNonZero = -1
     for (i in nums.indices) {
         if (nums[i] != 0) {
-            nums[++lastNonZero] = nums[i].also { nums[i] = nums[lastNonZero] }
+            lastNonZero++
+            if (i != lastNonZero) nums[lastNonZero] = nums[i].also { nums[i] = nums[lastNonZero] }
         }
     }
 }
