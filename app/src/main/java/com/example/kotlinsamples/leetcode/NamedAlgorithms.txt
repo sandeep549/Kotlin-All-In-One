@@ -1,0 +1,5 @@
+List of Named Algorithms
+-----------------------------------
+1. Boyer Moore
+2. Floyd Cycle Detection
+3. Kadane's Algorithm
