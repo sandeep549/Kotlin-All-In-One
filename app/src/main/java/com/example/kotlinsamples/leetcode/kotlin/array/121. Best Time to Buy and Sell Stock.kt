@@ -8,16 +8,21 @@ fun main() {
 
     println(maxProfit3(intArrayOf(7, 1, 5, 3, 6, 4)))
     println(maxProfit3(intArrayOf(7, 6, 4, 3, 1)))
+
 }
 
+/**
+ * Try with buy stock on each day and check the profit if we sell it on
+ * every right side of it, retaining max profit found so far
+ */
 private fun maxProfit(prices: IntArray): Int {
-    var maxprofit = 0
+    var max = 0
     for (i in 0..prices.size - 2) {
         for (j in i + 1..prices.size - 1) {
-            maxprofit = max(maxprofit, prices[j] - prices[i])
+            max = max(max, prices[j] - prices[i])
         }
     }
-    return maxprofit
+    return max
 }
 
 private fun maxProfit2(prices: IntArray): Int {
@@ -31,15 +36,18 @@ private fun maxProfit2(prices: IntArray): Int {
     return maxsofar
 }
 
-private fun maxProfit3(prices: IntArray): Int {
-    var minprice = Int.MAX_VALUE // min price so far
-    var maxprofit = 0 // max profit so far
-    for (price in prices) {
-        if (price < minprice) {
-            minprice = price
-        } else if (price - minprice > maxprofit) {
-            maxprofit = price - minprice
-        }
+
+/**
+ * Iterate from left to right, try selling at every point retaining max profit found so far,
+ * and min found so far.
+ */
+private fun maxProfit3(arr: IntArray): Int {
+    if (arr.isEmpty()) return 0
+    var min = arr[0]
+    var ans = 0
+    for (i in 1..arr.lastIndex) {
+        ans = Math.max(ans, arr[i] - min)
+        min = Math.min(min, arr[i])
     }
-    return maxprofit
+    return ans
 }
