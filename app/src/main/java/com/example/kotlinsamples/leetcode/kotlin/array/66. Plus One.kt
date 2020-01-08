@@ -5,17 +5,16 @@ fun main() {
 }
 
 private fun plusOne(digits: IntArray): IntArray {
-    var i = digits.size - 1
-    while (i >= 0) {
+    for (i in digits.lastIndex downTo 0) {
         if (digits[i] < 9) {
             digits[i]++
             return digits
         }
-        digits[i--] = 0
+        digits[i] = 0
     }
-    var newArr = IntArray(digits.size + 1)
-    newArr[0] = 1
-    return newArr
+    var ans = IntArray(digits.size + 1)
+    ans[0] = 1
+    return ans
 }
 
 private fun plusOne2(digits: IntArray): IntArray {
