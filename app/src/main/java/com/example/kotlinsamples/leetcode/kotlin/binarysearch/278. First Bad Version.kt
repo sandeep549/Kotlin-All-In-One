@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.binarysearch
 
-fun firstBadVersion(n: Int): Int {
+private fun firstBadVersion(n: Int): Int {
     var l = 1
     var r = n
     var mid = 0
