@@ -34,30 +34,39 @@ private fun maxProfit(prices: IntArray): Int {
     return profit
 }
 
+/**
+ * Consider each greater element compared to previous as new peak compared previous
+ * and keep accumulating delta profit.
+ */
 private fun maxProfit2(prices: IntArray): Int {
-    var profit = 0
+    var ans = 0
     for (i in 1 until prices.size) {
         if (prices[i] > prices[i - 1]) {
-            profit += prices[i] - prices[i - 1]
+            ans += prices[i] - prices[i - 1]
         }
     }
-    return profit
+    return ans
 }
 
+/**
+ * Traverse from left to right, find every peak followed by valley, and
+ * book profit. Keep accumulating the profit and return it.
+ */
 private fun maxProfit3(prices: IntArray): Int {
-    var valley = prices[0]
-    var peak = prices[0]
+    var valley = 0
+    var peak = 0
     var profit = 0
     var i = 0
     while (i < prices.size - 1) {
-        while (i < prices.size - 1 && prices[i + 1] <= prices[i]) {
-            i++
-        }
+        //going down till we find a valley
+        while (i < prices.size - 1 && prices[i + 1] <= prices[i]) i++
         valley = prices[i]
-        while (i < prices.size - 1 && prices[i + 1] >= prices[i]) {
-            i++
-        }
+
+        //going up till we find a peak
+        while (i < prices.size - 1 && prices[i + 1] >= prices[i]) i++
         peak = prices[i]
+
+        //time to book profit
         profit += peak - valley
     }
     return profit
