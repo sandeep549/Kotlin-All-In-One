@@ -17,10 +17,10 @@ private fun isAlienSorted(words: Array<String>, order: String): Boolean {
         val v2: CharArray = word2.toCharArray()
         var k = 0
         while (k < lim) {
-            val c1 = map.get(v1[k])
-            val c2 = map.get(v2[k])
+            val c1 = map.get(v1[k])!!
+            val c2 = map.get(v2[k])!!
             if (c1 != c2) {
-                return c1!! - c2!!
+                return c1 - c2
             }
             k++
         }
