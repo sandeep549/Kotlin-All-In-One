@@ -3,6 +3,41 @@ package com.example.kotlinsamples
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory
+import java.util.*
+
+fun main() {
+    stackExample()
+//    val gson = GsonBuilder()
+//        .registerTypeAdapterFactory(subtypeRAF)
+//        .create()
+
+    //serializeAndDeserialize(gson, Subtype1()) // this works (but not suitable)
+    //serializeAndDeserialize(gson, Subtype2("s2")) // broken
+    //serializeAndDeserialize(gson, Subtype3("s3", Parent.EnumField.SUBTYPE3)) // broken
+}
+
+private fun stackExample() {
+    var stack1 = ArrayDeque<Char>()
+
+    var stack = ArrayDeque<Int>()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    println(stack.toString())
+    println(stack.isEmpty())
+
+    println(stack.peek())
+    println(stack.toString())
+
+    println(stack.pop())
+    println(stack.toString())
+
+    println(stack.push(9))
+    println(stack.toString())
+}
+
+
 
 //########################################################
 // TEST CODE  - START
@@ -10,6 +45,7 @@ import com.google.gson.typeadapters.RuntimeTypeAdapterFactory
 var arr = Array(3) { IntArray(2) }
 var arr1 =
     Array(4) { Array(3) { IntArray(2) } }
+
 
 fun containsDuplicate(nums: IntArray): Boolean {
     arr[0][1] = 2
@@ -48,15 +84,6 @@ val subtypeRAF = RuntimeTypeAdapterFactory.of(Parent::class.java, "enumField")
     .registerSubtype(Subtype2::class.java, Parent.EnumField.SUBTYPE2.name)
     .registerSubtype(Subtype3::class.java, Parent.EnumField.SUBTYPE3.name)
 
-fun main() {
-    val gson = GsonBuilder()
-        .registerTypeAdapterFactory(subtypeRAF)
-        .create()
-
-    serializeAndDeserialize(gson, Subtype1()) // this works (but not suitable)
-    serializeAndDeserialize(gson, Subtype2("s2")) // broken
-    //serializeAndDeserialize(gson, Subtype3("s3", Parent.EnumField.SUBTYPE3)) // broken
-}
 
 private fun serializeAndDeserialize(gson: Gson, obj: Parent) {
     println("-----------------------------------------")
