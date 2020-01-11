@@ -14,16 +14,15 @@ f`(n) = max sum including index n
 arr[n] = element at index n in given array
 
 2. sub-problems calls tree for f(4), depicting overlapping sub-problems
-
-f4
-/   \
-f3      f`3
-/  \       \
-f2     f`2    f`2
-/  \      \      \
-f1     f`1   f`1     f`1
-/  \     \      \      \
-f0   f`0   f`0    f`0    f`0
+                  f4
+                /   \
+             f3      f`3
+            /  \       \
+         f2     f`2    f`2
+        /  \      \      \
+     f1     f`1   f`1     f`1
+    /  \     \      \      \
+  f0   f`0   f`0    f`0    f`0
 
  */
 
@@ -50,14 +49,14 @@ private fun maxSubArray(arr: IntArray): Int {
     return max(arr.size - 1)
 }
 
-//bottom-up approach using tabulation
-//f(n) = MAX(f(n-1), f`(n-1) + arr[n], arr[n])
+// bottom-up approach using tabulation
+// f(n) = MAX(f(n-1), f`(n-1) + arr[n], arr[n])
 // f(n) is max_so_far
 // f`(n) is max_ending_here
 private fun maxSubArray2(arr: IntArray): Int {
     var max_so_far = arr[0]
     var max_ending_here = arr[0]
-    for (i in 1..arr.lastIndex) {
+    for(i in 1..arr.lastIndex){
         max_ending_here = Math.max(max_ending_here + arr[i], arr[i])
         max_so_far = Math.max(max_so_far, max_ending_here)
     }
