@@ -4,9 +4,10 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory
 import java.util.*
+import kotlin.math.min
 
 fun main() {
-    stackExample()
+    //stackExample()
 //    val gson = GsonBuilder()
 //        .registerTypeAdapterFactory(subtypeRAF)
 //        .create()
@@ -14,6 +15,39 @@ fun main() {
     //serializeAndDeserialize(gson, Subtype1()) // this works (but not suitable)
     //serializeAndDeserialize(gson, Subtype2("s2")) // broken
     //serializeAndDeserialize(gson, Subtype3("s3", Parent.EnumField.SUBTYPE3)) // broken
+
+    println(minFlips(2, 6, 5))
+    println(minFlips(4, 2, 7))
+    println(minFlips(1, 2, 3))
+}
+
+fun minFlips(a: Int, b: Int, c: Int): Int {
+    var res = a.or(b)
+    var expected = c
+    var i = 1
+    var ans = 0
+    while (i <= 32) {
+        if (res.shr(i - 1).and(1) != expected.shr(i - 1).and(1)) {
+            if (a.shr(i - 1).and(1) == b.shr(i - 1).and(1) && a.shr(i - 1).and(1) == 1) ans += 2
+            else ans++
+        }
+        i++
+    }
+    return ans
+}
+
+fun getNoZeroIntegers(n: Int): IntArray {
+    fun haszero(r: Int): Boolean {
+        var b = r
+        while (b > 0) {
+            if (b % 10 == 0) return true
+            else b /= 10
+
+        }
+        return false
+    }
+    for (i in 1..n / 2) if (!haszero(i) && !haszero(n - i)) return intArrayOf(i, n - i)
+    return intArrayOf()
 }
 
 private fun stackExample() {
@@ -36,7 +70,6 @@ private fun stackExample() {
     println(stack.push(9))
     println(stack.toString())
 }
-
 
 
 //########################################################

@@ -39,22 +39,19 @@ private fun reverse(head: ListNode?): ListNode? {
 }
 
 // Solution-2, tough needs more verification on edge cases to check
+//TODO verify it
 private fun isPalindrome2(head: ListNode?): Boolean {
     var sum = 0
     var mul = -1
-    var node = head
-    while (node != null) {
-        mul++
-        val p = (2 shl mul)
-        sum += p * node.`val`
-        node = node!!.next
+    var curr = head
+    while (curr != null) {
+        sum += (2.shl(++mul)) * curr.`val`
+        curr = curr!!.next
     }
-    node = head
-    while (node != null) {
-        val p = (2 shl mul)
-        sum -= p * node.`val`
-        node = node!!.next
-        mul--
+    curr = head
+    while (curr != null) {
+        sum -= (2.shl(mul--)) * curr.`val`
+        curr = curr!!.next
     }
     return sum == 0
 }
