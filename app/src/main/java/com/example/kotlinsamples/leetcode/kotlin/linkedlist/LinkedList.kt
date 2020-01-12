@@ -17,16 +17,9 @@ fun IntArray.toLinkedList(): ListNode? {
     return curr
 }
 
-fun main() {
-    "[2,45,678,3]".toLinkedList().let {
-        var head = it
-        while (head != null) {
-            println(head.`val`)
-            head = head.next
-        }
-    }
-}
-
+/**
+ * Return LinkedList head created from string e.g. "[2,45,678,3]"
+ */
 fun String.toLinkedList(): ListNode? {
     var head: ListNode? = null
     this.trim('[', ']')
@@ -40,6 +33,9 @@ fun String.toLinkedList(): ListNode? {
     return head
 }
 
+/**
+ * Print LinkedList from head to tail
+ */
 fun ListNode?.toString(): String {
     var head = this
     var res = ""
@@ -48,4 +44,14 @@ fun ListNode?.toString(): String {
         head = head.next
     }
     return res.removeSuffix(", ")
+}
+
+fun main() {
+    "[2,45,678,3]".toLinkedList().let {
+        var head = it
+        while (head != null) {
+            println(head.`val`)
+            head = head.next
+        }
+    }
 }

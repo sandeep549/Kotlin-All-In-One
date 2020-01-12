@@ -8,11 +8,8 @@ private fun hasCycle(head: ListNode?): Boolean {
     var visited = HashSet<ListNode>()
     var curr = head
     while (curr != null) {
-        if (visited.contains(curr)) {
-            return true
-        } else {
-            visited.add(curr)
-        }
+        if (visited.contains(curr)) return true
+        else visited.add(curr)
         curr = curr.next
     }
     return false
@@ -34,15 +31,14 @@ private fun hasCycle2(head: ListNode?): Boolean {
     return true
 }
 
+//Best version
 private fun hasCycle3(head: ListNode?): Boolean {
     var slow = head
     var fast = head
-    while (fast != null && fast.next != null) {
+    while (fast?.next != null) {
         slow = slow!!.next
         fast = fast.next!!.next
-        if (slow == fast) {
-            return true
-        }
+        if (slow == fast) return true
     }
     return false
 }
