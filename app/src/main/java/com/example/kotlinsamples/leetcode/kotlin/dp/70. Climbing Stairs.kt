@@ -16,6 +16,7 @@ private fun climbStairs(n: Int): Int {
     return ways(n)
 }
 
+//bottom-up
 private fun climbStairs2(n: Int): Int {
     var prepre = 1 //ways to come at step 0, we can take some other value also but base case will
     // increase, so better take this as 0
