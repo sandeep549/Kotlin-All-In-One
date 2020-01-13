@@ -27,7 +27,7 @@ private fun fib3(N: Int): Int {
     var a = 0
     var b = 0 //0th item in series
     var n = N
-    while (n > 0) {
+    while (n-- > 0) {
         var sum = a + if (b > 0) b else 1 //handle 1st item case
         a = b
         b = sum
