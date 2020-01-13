@@ -60,7 +60,7 @@ public class MissingNumber {
 
 		return result;
 	}
-
+ 
 	/*
 	 * Follow up Question, What if numbers are sorted?
 	 *
