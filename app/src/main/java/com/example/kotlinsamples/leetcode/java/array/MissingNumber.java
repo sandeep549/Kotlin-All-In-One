@@ -26,6 +26,12 @@ public class MissingNumber {
 		System.out.println(missingNumber2(array));
 		System.out.println(missingNumber2(array1));
 		System.out.println(missingNumber2(array2));
+		
+		//Sorted for variation in question. Missing number when array is sorted.
+		
+		Arrays.sort(array);
+		Arrays.sort(array1);
+		Arrays.sort(array2);
 
 		System.out.println(missingNumber3(array));
 		System.out.println(missingNumber3(array1));
@@ -76,9 +82,6 @@ public class MissingNumber {
 		if (array == null || array.length < 1)
 			throw new NullPointerException("Initialize array");
 
-		// Not to be considered as sorting, as the input will be sorted. This is just to
-		// replicate
-		Arrays.sort(array);
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] != i)
 				return i;
@@ -91,9 +94,6 @@ public class MissingNumber {
 		if (array == null || array.length < 1)
 			throw new NullPointerException("Initialize array");
 
-		// Not to be considered as sorting, as the input will be sorted. This is just to
-		// replicate
-		Arrays.sort(array);
 		int start = 0;
 		int end = array.length-1;
 		
