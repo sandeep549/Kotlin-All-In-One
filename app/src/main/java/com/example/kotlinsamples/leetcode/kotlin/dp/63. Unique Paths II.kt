@@ -33,7 +33,6 @@ private fun uniquePathsWithObstacles(m: Array<IntArray>): Int {
 //dp, bottom-up
 private fun uniquePathsWithObstacles2(m: Array<IntArray>): Int {
     fun ways(r: Int, c: Int): Int = if (r < 0 || c < 0) 0 else m[r][c]
-
     for (r in m.indices) {
         for (c in m.first().indices) {
             if (r == 0 && c == 0 && m[r][c] == 0) m[r][c] = 1
