@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.bitManipulation
 
 fun main() {
     println(toHex2(26))
