@@ -15,3 +15,18 @@ private fun sortArray(twoDArray: Array<IntArray>) {
     })
 
 }
+
+//using pair and tripple
+private fun PairExample() {
+    var p = Pair("sandeep", 1)
+    println(p.first)
+    println(p.second)
+}
+
+//using pair and tripple
+private fun TrippleExample() {
+    var p = Triple("sandeep", 1, 4.9)
+    println(p.first)
+    println(p.second)
+    println(p.third)
+}
