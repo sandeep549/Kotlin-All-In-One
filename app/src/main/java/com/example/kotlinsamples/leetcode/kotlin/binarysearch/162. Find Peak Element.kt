@@ -6,18 +6,13 @@ fun main() {
     println(findPeakElement(intArrayOf(1, 2)))
 }
 
-private fun findPeakElement(nums: IntArray): Int {
+private fun findPeakElement(arr: IntArray): Int {
     var l = 0
-    var r = nums.size - 1
-    var mid = 0
+    var r = arr.lastIndex
     while (l < r) {
-        mid = l + (r - l) / 2
-        if (nums[mid] > nums[mid + 1]) { //check mid with mid+1, as it will work for size 2 array
-            r = mid //always keep mid in search space, it could be peak
-        } else {
-            l =
-                mid + 1 //always increment left pointer as it will avoid infinite loop at start and end of array
-        }
+        var m = l + (r - l) / 2
+        if (arr[m] < arr[m + 1]) l = m + 1
+        else r = m
     }
     return l
 }
