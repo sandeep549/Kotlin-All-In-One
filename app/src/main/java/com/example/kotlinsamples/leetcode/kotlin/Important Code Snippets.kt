@@ -34,10 +34,6 @@ private fun TrippleExample() {
     println(p.third)
 }
 
-fun main() {
-    minIndex()
-}
-
 //find min index of smallest abs value in array
 private fun minIndex() {
     var arr = intArrayOf(3, 2, -1, 6, 9, 0)
@@ -52,4 +48,28 @@ private fun minIndex() {
     println(arr.indexOf(arr.min()!!))
 
     println(arr.indices.minBy { arr[it] })
+}
+
+fun main() {
+    sortingExamples()
+}
+
+private fun sortingExamples() {
+    var sortedValues = mutableListOf(1 to "a", 2 to "b", 7 to "c", 6 to "d", 5 to "c", 6 to "e")
+    sortedValues.sortBy { it.second }
+    println(sortedValues)
+
+    var a = mutableListOf(3, 2, 1, 4)
+    a.sortBy { it % 2 }
+    println(a)
+
+    val students = mutableListOf(21 to "Helen", 21 to "Tom", 20 to "Jim")
+
+    val ageComparator = compareBy<Pair<Int, String?>> { it.first }
+    val ageAndNameComparator = ageComparator.thenByDescending { it.second }
+    println(students.sortedWith(ageAndNameComparator))
+
+    var arr = intArrayOf(3, 2, 1, 4)
+    var arr1 = arr.sortedBy { it % 2 }
+    println(arr1.toList())
 }
