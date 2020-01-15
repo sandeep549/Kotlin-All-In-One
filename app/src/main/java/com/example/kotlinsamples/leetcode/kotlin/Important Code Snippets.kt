@@ -1,5 +1,8 @@
 package com.example.kotlinsamples.leetcode.kotlin
 
+import kotlin.math.abs
+import kotlin.math.absoluteValue
+
 // using comparator
 private fun sortArray(twoDArray: Array<IntArray>) {
 
@@ -29,4 +32,24 @@ private fun TrippleExample() {
     println(p.first)
     println(p.second)
     println(p.third)
+}
+
+fun main() {
+    minIndex()
+}
+
+//find min index of smallest abs value in array
+private fun minIndex() {
+    var arr = intArrayOf(3, 2, -1, 6, 9, 0)
+    println(arr.indexOf(arr.minBy { i -> (i) }!!))
+
+    val index = arr.minBy { (it) }?.let { arr.indexOf(it) }
+    println(index)
+
+    val i = arr.withIndex().minBy { (_, f) -> f }?.index
+    println(i)
+
+    println(arr.indexOf(arr.min()!!))
+
+    println(arr.indices.minBy { arr[it] })
 }
