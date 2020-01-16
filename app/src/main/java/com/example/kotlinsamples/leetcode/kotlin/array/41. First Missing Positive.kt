@@ -71,6 +71,7 @@ private fun firstMissingPositive2(nums: IntArray): Int {
     return n + 1
 }
 
+//Put each number in its right place.
 private fun firstMissingPositive3(nums: IntArray): Int {
     var A = nums
     var n = A.size
