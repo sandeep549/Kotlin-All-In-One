@@ -5,21 +5,20 @@ import kotlin.collections.ArrayList
 
 private fun inorderTraversal(root: TreeNode?): List<Int> {
     val list = ArrayList<Int>()
-    fun traverse(node: TreeNode?) {
-        if (node != null) {
-            traverse(node.left)
-            list.add(node.`val`)
-            traverse(node.right)
-        }
+    fun dfs(node: TreeNode?) {
+        if (node == null) return
+        dfs(node.left)
+        list.add(node.`val`)
+        dfs(node.right)
     }
-    traverse(root)
+    dfs(root)
     return list
 }
 
 private fun inorderTraversal2(root: TreeNode?): List<Int> {
     val list = ArrayList<Int>()
     var curr = root
-    val stack = Stack<TreeNode>()
+    val stack = ArrayDeque<TreeNode>()
     while (curr != null || !stack.isEmpty()) {
         while (curr != null) {
             stack.push(curr)
