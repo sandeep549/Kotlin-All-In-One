@@ -1,7 +1,9 @@
 package com.example.kotlinsamples.leetcode.kotlin
 
-import kotlin.math.abs
-import kotlin.math.absoluteValue
+import android.util.Range
+import java.util.concurrent.TimeUnit
+import java.util.stream.IntStream
+
 
 // using comparator
 private fun sortArray(twoDArray: Array<IntArray>) {
@@ -19,6 +21,52 @@ private fun sortArray(twoDArray: Array<IntArray>) {
 
 }
 
+fun main() {
+    arrayOverFlow()
+
+//    var r = Range(1, Int.MAX_VALUE)
+//    r
+//    IntStream.range(0,20).parallel().forEach(i->{
+//        ... do something here
+//    });
+
+}
+
+private fun arrayOverFlow() {
+    var list = mutableListOf<Int>()
+    var start = System.currentTimeMillis()
+    var k = 0
+    for (i in 1..Int.MAX_VALUE) {
+        k++
+        list.add(k)
+    }
+    println(k)
+    var milliseconds = System.currentTimeMillis() - start
+    val minutes: Long = TimeUnit.MILLISECONDS.toMinutes(milliseconds)
+    val seconds = TimeUnit.MILLISECONDS.toSeconds(milliseconds)
+
+    println("time taken milliseconds=" + milliseconds)
+    println("time taken minutes=" + minutes)
+    println("time taken seconds=" + seconds)
+    println("its okay till here")
+}
+
+private fun listInKotlin() {
+    //1
+    var l1 = listOf<Int>() // read-only, random access like ArrayList
+    //2
+    var l2 = mutableListOf<Int>() // mutable, random access like ArrayList
+    //work with above 2 whenever possible
+
+
+    //3
+    var l3 = arrayListOf<Int>() // same as 2, mutable ArrayList
+    var l4 = emptyList<Int>()// read-only, random access
+    var l5 = listOfNotNull<Int>() //read-only, random access
+
+    //No sequential access list in kotlin ???
+}
+
 private fun mapsInKotlin() {
     // inbuilt maps (non java maps, though needs clarification)
     /*1*/
@@ -26,6 +74,7 @@ private fun mapsInKotlin() {
     /*2*/
     var mutableMap = mutableMapOf<Int, Int>() // maintains order, mutable
 
+    //work with below 3 whenever possible
     //factory method for java maps
     /*3*/
     var sortedmap = sortedMapOf<Int, Int>() //java TreeMap, mutable
@@ -81,10 +130,6 @@ private fun minIndex() {
     println(arr.indexOf(arr.min()!!))
 
     println(arr.indices.minBy { arr[it] })
-}
-
-fun main() {
-    sortingExamples()
 }
 
 private fun sortingExamples() {
