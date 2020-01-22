@@ -19,6 +19,39 @@ private fun sortArray(twoDArray: Array<IntArray>) {
 
 }
 
+private fun mapsInKotlin() {
+    // inbuilt maps (non java maps, though needs clarification)
+    /*1*/
+    var immutableMap = mapOf<Int, Int>() // maintains insertion order, immutable
+    /*2*/
+    var mutableMap = mutableMapOf<Int, Int>() // maintains order, mutable
+
+    //factory method for java maps
+    /*3*/
+    var sortedmap = sortedMapOf<Int, Int>() //java TreeMap, mutable
+    /*4*/
+    var hasmap = hashMapOf<Int, Int>() // java HashMap, mutable
+    /*5*/
+    var likedhashmap = linkedMapOf<Int, Int>() // java LinkedHashMap, mutable, same as 2 internally
+}
+
+private fun findMode() {
+    val count = hashMapOf<Int, Int>()
+    /**
+     * sort map with max value frequency and return IntArray of keys.
+     */
+    //1.
+    val maxVal = count.map { it.value }.max() ?: 0
+    var arr: IntArray = count.filter { it.value >= maxVal }.map { it.key }.toIntArray()
+
+    //2.
+    arr = count.filter {
+        it.value >= count.maxBy { it.value }!!.value
+    }.map {
+        it.key
+    }.toIntArray()
+}
+
 //using pair and tripple
 private fun PairExample() {
     var p = Pair("sandeep", 1)
