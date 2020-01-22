@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun singleNumber(nums: IntArray): Int {
     var res = 0

@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 fun countCharacters(words: Array<String>, chars: String): Int {
     val count = IntArray(26)

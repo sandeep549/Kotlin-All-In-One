@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun fizzBuzz(n: Int): List<String> {
     var map = mapOf( // Order matters here, so under the hood LinkedHashMap

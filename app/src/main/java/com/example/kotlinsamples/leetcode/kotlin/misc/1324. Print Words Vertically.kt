@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun printVertically(s: String): List<String> {
     var inputList = s.split(" ")

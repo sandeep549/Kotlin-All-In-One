@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun twoSum(numbers: IntArray, target: Int): IntArray {
     for (i in numbers.indices) {

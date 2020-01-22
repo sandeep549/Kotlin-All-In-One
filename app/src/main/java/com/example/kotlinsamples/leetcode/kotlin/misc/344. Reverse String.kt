@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 fun reverseString(s: CharArray): Unit {
     for (i in 0..s.size / 2 - 1) {

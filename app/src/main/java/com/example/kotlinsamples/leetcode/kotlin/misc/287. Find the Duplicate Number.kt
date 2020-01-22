@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin
+package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun findDuplicate(nums: IntArray): Int {
     // Find the intersection point of the two runners.
