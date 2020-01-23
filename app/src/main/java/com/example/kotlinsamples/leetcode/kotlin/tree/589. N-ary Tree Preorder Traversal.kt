@@ -6,15 +6,17 @@ import java.util.*
 private fun preorder(root: NTreeNode?): List<Int> {
     var ans = mutableListOf<Int>()
     fun process(node: NTreeNode?) = node?.let { ans.add(it.`val`) }
+
     fun dfs(root: NTreeNode?) {
         root?.let {
             process(it)
             it.children?.let {
-                for (i in it) preorder(i)
+                for (i in it) dfs(i)
             }
         }
     }
     dfs(root)
+
     return ans
 }
 
@@ -33,5 +35,6 @@ private fun preorder2(root: NTreeNode?): List<Int> {
             for (i in it.reversed()) stack.push(i)
         }
     }
+
     return ans
 }
