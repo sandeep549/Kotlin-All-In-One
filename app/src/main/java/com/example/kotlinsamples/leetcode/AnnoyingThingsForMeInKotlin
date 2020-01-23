@@ -1,0 +1,9 @@
+Things that are annoying or need to be take care while coding in kotlin
+---------------------------------------------------------------
+
+1. Need to add !! operator at un-necessary places where I'm sure that variable is not null at all.
+   Seems like, to avoid NPE, lot of checking is enabled and thats crete this nuisance.
+
+2. Function parameter are by default val and can not modified within function, due to which redeclaration 
+    is required, which create verbosity and spoils that idea of kotlin to reduce verbosity.
+    
