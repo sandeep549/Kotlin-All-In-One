@@ -9,18 +9,18 @@ import kotlin.collections.ArrayList
 // In Java also, time performance is almost O(n) when input is almost sorted, which is true in this case.
 // Seems java also adopted Timsort for some special cases
 private fun getAllElements(root1: TreeNode?, root2: TreeNode?): List<Int> {
-    var list = ArrayList<Int>()
-    fun collect(node: TreeNode?) {
-        if (node != null) {
-            collect(node.left)
-            list.add(node.`val`)
-            collect(node.right)
+    var ans = mutableListOf<Int>()
+    fun dfs(root: TreeNode?) {
+        root?.let {
+            dfs(it.left)
+            ans.add(it.`val`)
+            dfs(it.right)
         }
     }
-    collect(root1)
-    collect(root2)
-    list.sort()
-    return list
+    dfs(root1)
+    dfs(root2)
+    ans.sort() //Timsort, almost O(n) performance
+    return ans
 }
 
 private fun getAllElements2(root1: TreeNode?, root2: TreeNode?): List<Int> {
