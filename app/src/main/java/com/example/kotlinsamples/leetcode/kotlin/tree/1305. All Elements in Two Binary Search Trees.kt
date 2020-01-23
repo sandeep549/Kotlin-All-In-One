@@ -3,6 +3,7 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 // Taken from
 // https://leetcode.com/problems/all-elements-in-two-binary-search-trees/discuss/464368/Short-O(n)-Python
 // In Java also, time performance is almost O(n) when input is almost sorted, which is true in this case.
@@ -81,4 +82,42 @@ private fun getAllElements3(root1: TreeNode?, root2: TreeNode?): List<Int> {
     while (i < list1.size) mergedList.add(list1.get(i++))
     while (j < list2.size) mergedList.add(list2.get(j++))
     return mergedList
+}
+
+/**
+ * Traverse iteratively both tree same time inroder, take smallest elment and add it to the list.
+ * O(n)
+ * O(n)
+ */
+private fun getAllElements4(root1: TreeNode?, root2: TreeNode?): List<Int> {
+    val stack1: ArrayDeque<TreeNode> = ArrayDeque()
+    val stack2: ArrayDeque<TreeNode> = ArrayDeque()
+    val output: MutableList<Int> = ArrayList()
+
+    var root1 = root1
+    var root2 = root2
+
+    while (root1 != null || root2 != null || !stack1.isEmpty() || !stack2.isEmpty()) {
+        while (root1 != null) {
+            stack1.push(root1)
+            root1 = root1.left
+        }
+        while (root2 != null) {
+            stack2.push(root2)
+            root2 = root2.left
+        }
+        // Add the smallest value into output,
+        // pop it from the stack,
+        // and then do one step right
+        if (stack2.isEmpty() || !stack1.isEmpty() && stack1.first.`val` <= stack2.first.`val`) {
+            root1 = stack1.pop()
+            output.add(root1.`val`)
+            root1 = root1.right
+        } else {
+            root2 = stack2.pop()
+            output.add(root2.`val`)
+            root2 = root2.right
+        }
+    }
+    return output
 }

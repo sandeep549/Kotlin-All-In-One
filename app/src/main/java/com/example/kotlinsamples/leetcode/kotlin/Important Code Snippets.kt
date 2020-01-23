@@ -1,8 +1,11 @@
 package com.example.kotlinsamples.leetcode.kotlin
 
 import android.util.Range
+import com.example.kotlinsamples.leetcode.kotlin.tree.TreeNode
+import java.util.*
 import java.util.concurrent.TimeUnit
 import java.util.stream.IntStream
+import kotlin.Comparator
 
 
 // using comparator
@@ -49,6 +52,27 @@ private fun arrayOverFlow() {
     println("time taken minutes=" + minutes)
     println("time taken seconds=" + seconds)
     println("its okay till here")
+}
+
+private fun stackInKotlin() {
+    val stack1: ArrayDeque<Int> = ArrayDeque()
+    stack1.push(1)
+    stack1.push(2)
+    stack1.pop()
+    stack1.peek()
+    stack1.peekFirst()
+    stack1.isEmpty()
+    stack1.size
+}
+
+private fun queueInKotlin() {
+    val queue1: ArrayDeque<Int> = ArrayDeque()
+    queue1.add(1)
+    queue1.add(2)
+    queue1.remove()
+    queue1.peekFirst()
+    queue1.isEmpty()
+    queue1.size
 }
 
 private fun listInKotlin() {
