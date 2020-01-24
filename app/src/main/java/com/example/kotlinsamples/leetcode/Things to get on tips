@@ -1,7 +1,12 @@
 Things to get on tips
 
 1. Kotlin 2D array handling(initializing) **
-2. Kotlin working with map *
-3. Kotlin collection grouping functions
-4. Kotlin Arrays class in-build functions **
-5. Constructing comparator in kotlin**
+
+2. Kotlin mutable, immutable list, list of list
+3. Kotlin working with map, Map of Map, TreeMap of TreeMap
+4. Kotlin set
+
+5. Kotlin collection grouping functions
+6. Kotlin Arrays class in-build functions **
+7. Constructing comparator in kotlin**
+
