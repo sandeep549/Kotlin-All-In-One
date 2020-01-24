@@ -1,5 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
+
 // solution not verified, as env. not available
 private fun inorderSuccessor(root: TreeNode?, p: TreeNode): TreeNode? {
     var seen = false
@@ -38,4 +39,17 @@ private fun inorderSuccessor2(root: TreeNode?, p: TreeNode): TreeNode? {
         }
     }
     return null
+}
+
+// iterative version of "inorderSuccessor2"
+private fun inorderSuccessor3(root: TreeNode?, p: TreeNode): TreeNode {
+    var res: TreeNode? = null
+    var root = root //make root mutable
+    while (root != null) {
+        if (root.`val` > p.`val`) {
+            res = root
+            root = root.left
+        } else root = root.right
+    }
+    return res!!
 }
