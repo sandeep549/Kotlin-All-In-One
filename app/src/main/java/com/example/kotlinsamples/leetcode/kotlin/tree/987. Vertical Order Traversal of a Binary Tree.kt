@@ -25,3 +25,4 @@ private fun verticalTraversal(root: TreeNode?): List<List<Int>> {
 }
 
 //todo: check top solution also in discuss
+// https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/discuss/231425/Java-Solution-using-Only-PriorityQueue
