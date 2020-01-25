@@ -10,7 +10,7 @@ private fun searchRange(nums: IntArray, target: Int): IntArray {
     var r = nums.lastIndex
     var mid = 0
     while (l < r) {
-        mid = l + (r - l) / 2
+        mid = l + (r - l) / 2 //keep mid towards l side
         if (target > nums[mid]) l = mid + 1
         else r = mid
     }
@@ -18,7 +18,7 @@ private fun searchRange(nums: IntArray, target: Int): IntArray {
 
     r = nums.lastIndex
     while (l < r) {
-        mid = l + (r - l + 1) / 2
+        mid = l + (r - l + 1) / 2 //keep mid towards r side
         if (target >= nums[mid]) l = mid
         else r = mid - 1
     }
