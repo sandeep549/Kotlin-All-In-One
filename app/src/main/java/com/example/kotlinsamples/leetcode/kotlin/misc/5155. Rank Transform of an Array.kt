@@ -10,10 +10,13 @@ private fun arrayRankTransform(arr: IntArray): IntArray {
     var sorted = arr.copyOf().sortedArray()
     var map = mutableMapOf<Int, Int>()
     var rank = 1
-    for (i in sorted.indices) if (i > 0 && sorted[i] > sorted[i - 1]) map.put(
-        sorted[i],
-        ++rank
-    ) else map.put(sorted[i], rank)
-    for (i in arr.indices) arr[i] = map.get(arr[i])!!
+    for (i in sorted.indices) {
+        if (i > 0 && sorted[i] > sorted[i - 1])
+            map.put(sorted[i], ++rank)
+        else
+            map.put(sorted[i], rank)
+    }
+    for (i in arr.indices)
+        arr[i] = map.get(arr[i])!!
     return arr
 }
