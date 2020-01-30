@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.dp
+package com.example.kotlinsamples.leetcode.kotlin.math
 
 private fun checkSubarraySum(nums: IntArray, k: Int): Boolean {
     for (i in 0..nums.size - 2) {
