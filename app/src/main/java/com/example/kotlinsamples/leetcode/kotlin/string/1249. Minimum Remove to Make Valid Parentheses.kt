@@ -13,11 +13,11 @@ private fun minRemoveToMakeValid(s: String): String {
         if (c == ')') {
             if (!stack.isEmpty() && stack.peek().first == '(') {
                 stack.pop()
-                ans.append(")")
+                ans.append(c)
             }
         } else if (c == '(') {
             stack.push(Pair('(', ans.length))
-            ans.append("(")
+            ans.append(c)
         } else {
             ans.append(c)
         }
