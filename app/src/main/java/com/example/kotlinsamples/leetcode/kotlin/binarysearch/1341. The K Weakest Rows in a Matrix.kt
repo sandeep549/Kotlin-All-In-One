@@ -63,3 +63,22 @@ private fun kWeakestRows2(mat: Array<IntArray>, k: Int): IntArray {
     while (i >= 0) ans[i--] = pq.poll().second
     return ans
 }
+
+private fun kWeakestRows3(mat: Array<IntArray>, k: Int): IntArray {
+    var pq = PriorityQueue<Pair<Int, Int>>(k) { p1, p2 -> if (p1.first == p2.first) p2.second - p1.second else p2.first - p1.first }
+    var r = 0
+    var c = 0
+    var s = 0
+    while (r < mat.size && c < mat[0].size) {
+        while (mat[r][c] == 1 && c + 1 < mat[0].size && mat[r][c + 1] == 1) c++
+        while (mat[r][c] == 0 && c - 1 >= 0) c--
+        s = if (mat[r][c] == 1) c + 1 else 0
+        pq.offer(Pair(s, r))
+        if (pq.size > k) pq.poll()
+        r++
+    }
+    var ans = IntArray(k)
+    var i = k - 1
+    while (i >= 0) ans[i--] = pq.poll().second
+    return ans
+}
