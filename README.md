@@ -1,3 +1,4 @@
 # Kotlin-All-In-One
-1. DS Algorithms programs in Kotlin
-2. Kotlin comceps samples
+This repository contains:
+1. Leetcode problems solutions in Kotlin
+2. Kotlin basics concepts samples
