@@ -50,7 +50,7 @@ private fun isSymmetric3(root: TreeNode?): Boolean {
         if (n1 == null || n2 == null) return false
         if (n1!!.`val` != n2!!.`val`) return false
 
-        queue.offer(n1.left)
+        queue.offer(n1.left) //LinkedList allows null
         queue.offer(n2.right)
 
         queue.offer(n1.right)
