@@ -31,10 +31,8 @@ private fun twoSum2(nums: IntArray, target: Int): IntArray {
 private fun twoSum3(nums: IntArray, target: Int): IntArray {
     val map = HashMap<Int, Int>()
     for (i in nums.indices) {
-        if (map.containsKey(target - nums[i])) {
-            return intArrayOf(i, map[target - nums[i]]!!)
-        }
-        map.put(nums[i], i)
+        map[target - nums[i]]?.let { return intArrayOf(i, it) }
+        map[nums[i]] = i
     }
     return intArrayOf()
 }
