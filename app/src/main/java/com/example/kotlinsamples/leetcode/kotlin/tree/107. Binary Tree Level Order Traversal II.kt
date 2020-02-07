@@ -40,3 +40,18 @@ fun levelOrderBottom2(root: TreeNode?): List<List<Int>> {
     dfs(root, 0)
     return res
 }
+
+//dfs
+fun levelOrderBottom3(root: TreeNode?): List<List<Int>> {
+    var res = mutableListOf<MutableList<Int>>()
+    fun dfs(root: TreeNode?, level: Int) {
+        root?.let {
+            if (level >= res.size) res.add(level, mutableListOf())
+            dfs(it.left, level + 1)
+            dfs(it.right, level + 1)
+            res.get(level).add(it.`val`)
+        }
+    }
+    dfs(root, 0)
+    return res.reversed()
+}
