@@ -17,7 +17,7 @@ private fun averageOfLevels(root: TreeNode?): DoubleArray {
     return list.map { it.second / it.first }.toDoubleArray()
 }
 
-private fun averageOfLevels2(root: TreeNode?): List<Double>? {
+private fun averageOfLevels2(root: TreeNode?): DoubleArray {
     val list: MutableList<Double> = ArrayList()
     val queue: Queue<TreeNode> = ArrayDeque()
     queue.offer(root)
@@ -32,5 +32,5 @@ private fun averageOfLevels2(root: TreeNode?): List<Double>? {
         }
         list.add(sum / count)
     }
-    return list
+    return list.toDoubleArray()
 }
