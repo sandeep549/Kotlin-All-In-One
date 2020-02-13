@@ -18,7 +18,7 @@ private fun findDuplicate2(nums: IntArray): Int {
         fast = nums[nums[fast]]
     } while (slow != fast)
 
-    // Find the "entrance" to the cycle.
+    // locate entrace of cycle
     fast = nums[0]
     while (fast != slow) {
         fast = nums[fast]
