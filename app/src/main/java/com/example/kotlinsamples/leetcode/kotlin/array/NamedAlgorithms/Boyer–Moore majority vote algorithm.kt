@@ -14,4 +14,3 @@ private fun majorityElement3(nums: IntArray): Int {
     }
     return major
 }
-

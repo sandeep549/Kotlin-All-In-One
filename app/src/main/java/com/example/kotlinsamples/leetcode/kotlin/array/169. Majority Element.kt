@@ -49,3 +49,18 @@ private fun majorityElement3(nums: IntArray): Int {
     return major
 }
 
+private fun majorityElement4(nums: IntArray): Int {
+    var a = 0
+    var ca = 0
+    for (x in nums) {
+        if (x == a) ca++
+        else if (ca == 0) {
+            a = x
+            ca = 1
+        } else {
+            ca--
+        }
+    }
+    return a
+}
+
