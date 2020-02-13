@@ -1,5 +1,9 @@
 package com.example.kotlinsamples.leetcode.kotlin.array
 
+import android.annotation.SuppressLint
+
+//brute force
+//O(n^2)
 private fun majorityElement(nums: IntArray): Int {
     for (i in 0 until nums.lastIndex) {
         var cnt = 1
@@ -14,18 +18,19 @@ private fun majorityElement(nums: IntArray): Int {
 }
 
 // By Map
+//O(n);O(n)
+@SuppressLint("NewApi")
 private fun majorityElement1(nums: IntArray): Int {
-    var map = HashMap<Int, Int>()
+    val map = mutableMapOf<Int, Int>()
     for (n in nums) {
-        map.put(n, map.getOrDefault(n, 0))
-        if (map.get(n)!! > nums.size / 2) {
-            return n
-        }
+        map[n] = map.getOrDefault(n, 0)
+        map[n]?.let { if (it > nums.size / 2) return n }
     }
     return 0 // This will get execute, as there is always majority present in input
 }
 
 // By sorting
+//O(nlogn)
 private fun majorityElement2(nums: IntArray): Int {
     nums.sort()
     return nums[nums.size / 2]
