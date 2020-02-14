@@ -36,3 +36,17 @@ private fun subsets2(nums: IntArray): List<List<Int>> {
     }
     return output
 }
+
+private fun subsets3(nums: IntArray): List<List<Int>> {
+    var ans = mutableListOf<List<Int>>()
+    fun backtrack(tmpList: MutableList<Int>, start: Int) {
+        ans.add(tmpList.toList())
+        for (i in start..nums.lastIndex) {
+            tmpList.add(nums[i])
+            backtrack(tmpList, i + 1)
+            tmpList.removeAt(tmpList.lastIndex)
+        }
+    }
+    backtrack(mutableListOf(), 0)
+    return ans
+}
