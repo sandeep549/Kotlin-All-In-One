@@ -19,6 +19,7 @@ private fun permuteUnique(nums: IntArray): List<List<Int>> {
             }
         }
     }
+    nums.sort()
     backtrack(mutableListOf(), BooleanArray(nums.size), 0)
     return ans
 }
