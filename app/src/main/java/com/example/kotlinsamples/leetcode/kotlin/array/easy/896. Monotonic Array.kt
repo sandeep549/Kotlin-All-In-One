@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun isMonotonic(A: IntArray): Boolean {
     var inc = true

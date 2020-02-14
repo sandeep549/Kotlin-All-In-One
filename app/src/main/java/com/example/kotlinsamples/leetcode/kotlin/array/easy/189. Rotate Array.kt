@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 //time-O(n^2); n is size of array
 private fun rotate(nums: IntArray, k: Int) {

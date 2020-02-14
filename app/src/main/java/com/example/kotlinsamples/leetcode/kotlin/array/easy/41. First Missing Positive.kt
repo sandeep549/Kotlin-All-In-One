@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 
 private fun firstMissingPositive(nums: IntArray): Int {

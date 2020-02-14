@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 fun main() {
     println(sortArrayByParity(intArrayOf(1, 3, 2, 4)).toList())

@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 // library function given in question, sample implementation
 fun knows(a: Int, b: Int): Boolean = true
@@ -10,7 +10,11 @@ private fun findCelebrity(n: Int): Int {
         flag = true
         for (j in 0..n - 1) {
             if (i == j) continue
-            if (knows(i, j) || !knows(j, i)) {
+            if (knows(
+                    i,
+                    j
+                ) || !knows(j, i)
+            ) {
                 flag = false
                 break
             }

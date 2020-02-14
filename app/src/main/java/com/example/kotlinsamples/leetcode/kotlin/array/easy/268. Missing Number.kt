@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun missingNumber(nums: IntArray): Int {
     return (nums.size * (nums.size + 1)) / 2 - nums.sum()

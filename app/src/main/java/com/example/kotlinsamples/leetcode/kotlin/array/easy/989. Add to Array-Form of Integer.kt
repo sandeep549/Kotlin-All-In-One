@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun addToArrayForm(arr: IntArray, k: Int): List<Int> {
     var curr = k

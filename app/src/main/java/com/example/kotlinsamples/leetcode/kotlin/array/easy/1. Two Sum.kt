@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 fun main() {
     println(twoSum(intArrayOf(2, 11, 7, 15), 9).toList())

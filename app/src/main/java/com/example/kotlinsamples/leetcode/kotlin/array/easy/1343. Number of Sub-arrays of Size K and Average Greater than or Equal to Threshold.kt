@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun numOfSubarrays(arr: IntArray, k: Int, threshold: Int): Int {
     var count = 0

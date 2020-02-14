@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 fun productExceptSelf(nums: IntArray): IntArray? {
     val result = IntArray(nums.size)

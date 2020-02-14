@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun checkIfExist(arr: IntArray): Boolean {
     var set = mutableSetOf<Int>()

@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun maximumProduct(nums: IntArray): Int {
     var max = Int.MIN_VALUE

@@ -1,4 +1,4 @@
-package com.example.kotlinsamples.leetcode.kotlin.array
+package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 private fun containsDuplicate(nums: IntArray): Boolean {
     for (i in 0 until nums.size - 1) {
