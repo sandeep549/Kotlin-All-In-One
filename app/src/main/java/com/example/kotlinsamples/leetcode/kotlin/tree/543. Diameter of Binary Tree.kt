@@ -17,7 +17,7 @@ private fun diameterOfBinaryTree(root: TreeNode?): Int {
         var l = dfs(root.left)
         var r = dfs(root.right)
         ans = Math.max(ans, l + r)
-        return Math.max(l, r) + 1
+        return maxOf(l, r) + 1
     }
     dfs(root)
     return ans
