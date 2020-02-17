@@ -9,8 +9,8 @@ class TreeNode(var `val`: Int) {
         this.right = right
     }
 
-    var parent: TreeNode? =
-        null //only to be used in special cases when asked,otherwise not available
+    //only to be used in special cases when asked,otherwise not available
+    var parent: TreeNode? = null
     var left: TreeNode? = null
     var right: TreeNode? = null
 }
