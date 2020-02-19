@@ -55,8 +55,8 @@ private fun maxSubArray2(arr: IntArray): Int {
     var max_so_far = arr[0]
     var max_ending_here = arr[0]
     for(i in 1..arr.lastIndex){
-        max_ending_here = Math.max(max_ending_here + arr[i], arr[i])
-        max_so_far = Math.max(max_so_far, max_ending_here)
+        max_ending_here = maxOf(max_ending_here + arr[i], arr[i])
+        max_so_far = maxOf(max_so_far, max_ending_here)
     }
     return max_so_far
 }
