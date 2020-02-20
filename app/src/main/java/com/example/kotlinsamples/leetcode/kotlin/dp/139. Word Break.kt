@@ -2,19 +2,20 @@ package com.example.kotlinsamples.leetcode.kotlin.dp
 
 //Recursion, time limit exceeded
 private fun wordBreak(s: String, wordDict: List<String>): Boolean {
-    fun isWord(s: String, l: Int, dist: List<String>): Boolean {
-        if (l == s.length) return true
-        var l = l
-        var k = 0
-        while (l + k < s.length) {
-            if (dist.contains(s.substring(l, l + k + 1)) && isWord(s, l + k + 1, dist)) {
-                return true
+    var set = wordDict.toSet()
+    fun isWord(start: Int, end: Int) = set.contains(s.substring(start, end + 1))
+    fun canBreak(start: Int, end: Int): Boolean {
+        if (start > end) return true
+        var res = false
+        for (j in start..end) {
+            if (isWord(start, j) && canBreak(j + 1, end)) {
+                res = true
+                break
             }
-            k++
         }
-        return false
+        return res
     }
-    return isWord(s, 0, wordDict)
+    return canBreak(0, s.lastIndex)
 }
 
 //dp, bottom-up, recursive
@@ -22,29 +23,30 @@ private fun wordBreak(s: String, wordDict: List<String>): Boolean {
 // O(n)
 private fun wordBreak2(s: String, wordDict: List<String>): Boolean {
     var set = wordDict.toSet()
-    var dp = Array<Boolean?>(s.length + 1) { null }
-
-    fun isWord(l: Int): Boolean {
-        if (l == s.length) return true
-        var k = 0
-        while (l + k < s.length) {
-            if (set.contains(s.substring(l, l + k + 1))) {
-                if (dp[l + k + 1] == null) dp[l + k + 1] = isWord(l + k + 1)
-                if (dp[l + k + 1]!!) return true
+    var table = Array<Boolean?>(s.length + 1) { null }
+    fun isWord(start: Int, end: Int) = set.contains(s.substring(start, end + 1))
+    fun canBreak(start: Int, end: Int): Boolean {
+        if (start > end) return true
+        table[start]?.let { return it }
+        var res = false
+        for (j in start..end) {
+            if (isWord(start, j) && canBreak(j + 1, end)) {
+                table[j + 1] = true
+                res = true
+                break
             }
-            k++
         }
-        return false
+        table[start] = res
+        return res
     }
-
-    return isWord(0)
+    return canBreak(0, s.lastIndex)
 }
 
 //dp, bottom-up, iterative
 //O(n^2)
 // O(n)
-fun wordBreak3(s: String, wordDict: List<String?>?): Boolean {
-    val set = wordDict!!.toSet()
+fun wordBreak3(s: String, wordDict: List<String?>): Boolean {
+    val set = wordDict.toSet()
     val dp = BooleanArray(s.length + 1)
     dp[0] = true
     for (i in 1..s.length) {
