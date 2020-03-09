@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 private fun rightSideView(root: TreeNode?): List<Int> {
     var list = mutableListOf<Pair<Int, Int>>()
     var set = mutableSetOf<Int>()
@@ -16,7 +15,6 @@ private fun rightSideView(root: TreeNode?): List<Int> {
             }
             dfs(root.left, level + 1)
         }
-
     }
     dfs(root, 0)
     list.sortBy { it.first }
@@ -31,7 +29,6 @@ private fun rightSideView2(root: TreeNode?): List<Int> {
             dfs(root.right, level + 1)
             dfs(root.left, level + 1)
         }
-
     }
     dfs(root, 1)
     return list

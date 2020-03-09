@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.slidingwindow
 
 import android.annotation.SuppressLint
 
-
 @SuppressLint("NewApi")
 private fun minWindow(s: String, t: String): String {
     if (s.length < t.length) return ""
@@ -21,7 +20,7 @@ private fun minWindow(s: String, t: String): String {
         }
         while (l <= r && formed == required) {
             c = s[l]
-            ans = Pair(l, r) //save new smallest window
+            ans = Pair(l, r) // save new smallest window
             windowCounts[c] = windowCounts[c]!! - 1
             if (dict.containsKey(c) && windowCounts[c]!! < dict[c]!!) {
                 formed--
@@ -64,4 +63,3 @@ private fun minWindow2(s: String, t: String): String {
     }
     return if (minLen == Int.MAX_VALUE) "" else s.substring(minStart, minStart + minLen)
 }
-

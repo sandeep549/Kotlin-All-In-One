@@ -4,7 +4,7 @@ fun main() {
     println(climbStairs(2))
 }
 
-//top-down using recursion
+// top-down using recursion
 private fun climbStairs(n: Int): Int {
     var dp = IntArray(n + 1)
     fun ways(n: Int): Int {
@@ -16,9 +16,9 @@ private fun climbStairs(n: Int): Int {
     return ways(n)
 }
 
-//bottom-up
+// bottom-up
 private fun climbStairs2(n: Int): Int {
-    var prepre = 1 //ways to come at step 0, we can take some other value also but base case will
+    var prepre = 1 // ways to come at step 0, we can take some other value also but base case will
     // increase, so better take this as 0
     var pre = 1 // ways to come at step 1, using single step
     var ans = 1 // keep track of ways to reach at every step, keep it 1 to handle where input n is 1

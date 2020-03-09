@@ -4,7 +4,7 @@ fun main() {
     minCostClimbingStairs(intArrayOf(0, 0, 1, 1))
 }
 
-//top-down
+// top-down
 private fun minCostClimbingStairs(cost: IntArray): Int {
     var dp = IntArray(cost.size)
     fun cost(n: Int): Int { // calculates price to reach at step n
@@ -17,10 +17,10 @@ private fun minCostClimbingStairs(cost: IntArray): Int {
     return Math.min(dp[cost.size - 1], dp[cost.size - 2]) // to cross last-step(n-1)
 }
 
-//bottom-up
+// bottom-up
 private fun minCostClimbingStairs2(cost: IntArray): Int {
     var prepre = 0
-    var pre = cost[0] //start from 0th step
+    var pre = cost[0] // start from 0th step
     for (i in 1..cost.lastIndex) {
         var curr = Math.min(prepre, pre) + cost[i]
         prepre = pre

@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
-
 class Point(var x: Int, var y: Int, var `val`: Int)
 
 private fun verticalTraversal(root: TreeNode?): List<List<Int>> {
@@ -24,5 +23,5 @@ private fun verticalTraversal(root: TreeNode?): List<List<Int>> {
     return listOfLists
 }
 
-//todo: check top solution also in discuss
+// todo: check top solution also in discuss
 // https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/discuss/231425/Java-Solution-using-Only-PriorityQueue

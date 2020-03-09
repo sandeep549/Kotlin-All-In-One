@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
-
 /**
  * 1. Perform DFS on tree, maintain reference to parent node for ech node.
  * 2. Now start from target node, and perform dfs in 3 directions,left, right and up.

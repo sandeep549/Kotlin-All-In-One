@@ -15,9 +15,9 @@ private fun closestValue(root: TreeNode?, target: Double): Int {
             dfs(it.right)
         }
     }
-    dfs(root) //store in array
+    dfs(root) // store in array
 
-    //find closest in sorted array
+    // find closest in sorted array
     var diff = Double.MAX_VALUE
     var ans = 0
     list.forEach {
@@ -38,8 +38,8 @@ private fun closestValue(root: TreeNode?, target: Double): Int {
  */
 private fun closestValue2(root: TreeNode?, target: Double): Int {
     var stack = ArrayDeque<TreeNode>()
-    var curr = root //to iterate
-    var diff = Double.MAX_VALUE //to track min diff
+    var curr = root // to iterate
+    var diff = Double.MAX_VALUE // to track min diff
     var ans = root?.`val` ?: 0 // to track element with min diff
     stack.push(curr)
     while (curr != null || !stack.isEmpty()) {

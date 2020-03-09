@@ -44,5 +44,5 @@ private fun numIslands2(grid: Array<CharArray>): Int {
     }
     return count
 }
-//todo: do it with bfs and union find
+// todo: do it with bfs and union find
 // https://leetcode.com/problems/number-of-islands/solution/

@@ -22,7 +22,7 @@ private fun arraysIntersection(arr1: IntArray, arr2: IntArray, arr3: IntArray): 
             j++
             k++
         } else {
-            var min = arrayOf(arr1[i], arr2[j], arr3[k]).min() //u can use Math.min() also
+            var min = arrayOf(arr1[i], arr2[j], arr3[k]).min() // u can use Math.min() also
             if (min == arr1[i]) i++
             if (min == arr2[j]) j++
             if (min == arr3[k]) k++

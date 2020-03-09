@@ -9,4 +9,3 @@ fun main() {
     mylist.add("2")
     println(mylist)
 }
-

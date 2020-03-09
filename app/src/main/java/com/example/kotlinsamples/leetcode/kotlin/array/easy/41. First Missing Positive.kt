@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
-
 private fun firstMissingPositive(nums: IntArray): Int {
     val n: Int = nums.size
 
@@ -71,7 +70,7 @@ private fun firstMissingPositive2(nums: IntArray): Int {
     return n + 1
 }
 
-//Put each number in its right place.
+// Put each number in its right place.
 private fun firstMissingPositive3(nums: IntArray): Int {
     var A = nums
     var n = A.size
@@ -84,4 +83,3 @@ private fun firstMissingPositive3(nums: IntArray): Int {
 
     return n + 1
 }
-

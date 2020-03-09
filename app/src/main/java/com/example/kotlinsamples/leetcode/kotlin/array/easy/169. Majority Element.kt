@@ -2,8 +2,8 @@ package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
 import android.annotation.SuppressLint
 
-//brute force
-//O(n^2)
+// brute force
+// O(n^2)
 private fun majorityElement(nums: IntArray): Int {
     for (i in 0 until nums.lastIndex) {
         var cnt = 1
@@ -18,7 +18,7 @@ private fun majorityElement(nums: IntArray): Int {
 }
 
 // By Map
-//O(n);O(n)
+// O(n);O(n)
 @SuppressLint("NewApi")
 private fun majorityElement1(nums: IntArray): Int {
     val map = mutableMapOf<Int, Int>()
@@ -30,7 +30,7 @@ private fun majorityElement1(nums: IntArray): Int {
 }
 
 // By sorting
-//O(nlogn)
+// O(nlogn)
 private fun majorityElement2(nums: IntArray): Int {
     nums.sort()
     return nums[nums.size / 2]
@@ -63,4 +63,3 @@ private fun majorityElement4(nums: IntArray): Int {
     }
     return a
 }
-

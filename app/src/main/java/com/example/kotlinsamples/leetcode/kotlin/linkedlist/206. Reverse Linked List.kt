@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.linkedlist
 
-
 // iterative
 private fun reverseList(head: ListNode?): ListNode? {
     var hd: ListNode? = head

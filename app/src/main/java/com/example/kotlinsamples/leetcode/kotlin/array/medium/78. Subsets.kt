@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.array.medium
 
 import kotlin.math.pow
 
-
 private fun subsets(nums: IntArray): List<List<Int>> {
     val output = mutableListOf<MutableList<Int>>()
     output.add(ArrayList())

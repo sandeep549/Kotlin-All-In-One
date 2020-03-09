@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
-//time-O(n^2); n is size of array
+// time-O(n^2); n is size of array
 private fun rotate(nums: IntArray, k: Int) {
     val count = k % nums.size
     for (i in 1..count) {
@@ -12,7 +12,7 @@ private fun rotate(nums: IntArray, k: Int) {
     }
 }
 
-//time-O(n), space-O(n); n is size of array
+// time-O(n), space-O(n); n is size of array
 private fun rotate2(nums: IntArray, k: Int) {
     val rotation = k % nums.size
     val a = IntArray(nums.size)
@@ -24,7 +24,7 @@ private fun rotate2(nums: IntArray, k: Int) {
     }
 }
 
-//time-O(n), space-O(1); n is size of array
+// time-O(n), space-O(1); n is size of array
 private fun rotate4(nums: IntArray, k: Int) {
     var rotation = k % nums.size
     var swap = 0
@@ -45,7 +45,7 @@ private fun rotate4(nums: IntArray, k: Int) {
     }
 }
 
-//Recursive; time-O(n), space-O(1); n is size of array
+// Recursive; time-O(n), space-O(1); n is size of array
 private fun rotate3(nums: IntArray, k: Int) {
     val rotation = k % nums.size
     var swap = 0

@@ -4,10 +4,10 @@ import java.util.*
 
 private fun minRemoveToMakeValid(s: String): String {
     var ans = StringBuilder()
-    var stack = ArrayDeque<Pair<Char, Int>>() //stack will contain only braces
+    var stack = ArrayDeque<Pair<Char, Int>>() // stack will contain only braces
     var i = 0
 
-    //loop will handle invalid closing bracket with stack
+    // loop will handle invalid closing bracket with stack
     while (i < s.length) {
         var c = s[i++]
         if (c == ')') {
@@ -23,7 +23,7 @@ private fun minRemoveToMakeValid(s: String): String {
         }
     }
 
-    //at last, stack will be either empty or will contain invalid open braces
+    // at last, stack will be either empty or will contain invalid open braces
     while (!stack.isEmpty()) {
         ans.deleteCharAt(stack.peek().second)
         stack.pop()

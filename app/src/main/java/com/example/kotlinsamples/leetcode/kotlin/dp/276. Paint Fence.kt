@@ -15,7 +15,7 @@ package com.example.kotlinsamples.leetcode.kotlin.dp
  *
  */
 
-//dp, top-down recursive
+// dp, top-down recursive
 private fun numWays(n: Int, k: Int): Int {
     var dp = IntArray(n + 1) { 0 }
     fun ways(n: Int): Int {

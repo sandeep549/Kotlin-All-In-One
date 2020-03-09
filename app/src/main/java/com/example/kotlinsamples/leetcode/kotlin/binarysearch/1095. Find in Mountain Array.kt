@@ -1,14 +1,14 @@
 package com.example.kotlinsamples.leetcode.kotlin.binarysearch
 
 private fun findInMountainArray(target: Int, mountainArray: MountainArray): Int {
-    //cache the calls to minimize calls to MountainArray
+    // cache the calls to minimize calls to MountainArray
     var cache = IntArray(mountainArray.length()) { -1 }
     fun item(index: Int): Int {
         if (cache[index] == -1) cache[index] = mountainArray.get(index)
         return cache[index]
     }
 
-    //find peak
+    // find peak
     var l = 0
     var r = mountainArray.length() - 1
     while (l < r) {
@@ -18,7 +18,7 @@ private fun findInMountainArray(target: Int, mountainArray: MountainArray): Int 
     }
     var peak = l
 
-    //search in left side to min index
+    // search in left side to min index
     l = 0
     r = peak
     while (l < r) {
@@ -28,7 +28,7 @@ private fun findInMountainArray(target: Int, mountainArray: MountainArray): Int 
     }
     if (target == item(l)) return l
 
-    //search in right half
+    // search in right half
     l = peak + 1
     r = mountainArray.length() - 1
     while (l < r) {

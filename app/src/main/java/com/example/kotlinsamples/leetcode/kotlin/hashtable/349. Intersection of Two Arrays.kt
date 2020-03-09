@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 
 private fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
     return nums1.intersect(nums2.toHashSet()).toIntArray()
-    //return nums1.toHashSet().intersect(nums2.toHashSet()).toIntArray()
+    // return nums1.toHashSet().intersect(nums2.toHashSet()).toIntArray()
 }
 
 @SuppressLint("NewApi")

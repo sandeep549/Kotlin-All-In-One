@@ -48,7 +48,7 @@ private fun maximumProduct3(nums: IntArray): Int {
     return (min1 * min2 * max1).coerceAtLeast(max1 * max2 * max3)
 }
 
-//private fun maximumProduct4(nums: IntArray): Int {
+// private fun maximumProduct4(nums: IntArray): Int {
 //    var max3 = Int.MIN_VALUE
 //    var maxp2 = Int.MIN_VALUE
 //    var minn2 = Int.MAX_VALUE
@@ -62,4 +62,4 @@ private fun maximumProduct3(nums: IntArray): Int {
 //        min1 = min1.coerceAtMost(n)
 //    }
 //    return max3
-//}
+// }

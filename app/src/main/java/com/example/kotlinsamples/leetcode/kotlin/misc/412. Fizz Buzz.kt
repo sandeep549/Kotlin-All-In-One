@@ -1,7 +1,7 @@
 package com.example.kotlinsamples.leetcode.kotlin.misc
 
 private fun fizzBuzz(n: Int): List<String> {
-    var map = mapOf( // Order matters here, so under the hood LinkedHashMap
+    var map = mapOf(// Order matters here, so under the hood LinkedHashMap
         3 to "Fizz",
         5 to "Buzz"
     )

@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 
 import java.util.*
 
-
 private class Node {
     var `val`: Int = 0
     var left: Node? = null
@@ -10,7 +9,7 @@ private class Node {
     var next: Node? = null
 }
 
-//need to verify this solution
+// need to verify this solution
 private fun connect(root: Node?) {
     if (root == null) return
     var q = ArrayDeque<Node>()
@@ -39,9 +38,9 @@ private fun connect2(root: Node?) {
 
 private fun connect3(root: Node?) {
     var level_start = root
-    while (level_start != null) { //this loop will traverse from top-down on extreme left side of tree
+    while (level_start != null) { // this loop will traverse from top-down on extreme left side of tree
         var cur = level_start
-        while (cur != null) { //this will take us horizontally let to right on each level, handling each node's left and right pointer
+        while (cur != null) { // this will take us horizontally let to right on each level, handling each node's left and right pointer
             if (cur.left != null) cur.left!!.next = cur.right
             if (cur.right != null && cur.next != null) cur.right!!.next = cur.next!!.left
             cur = cur.next

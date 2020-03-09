@@ -1,8 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
 import java.util.*
-import java.util.Arrays.asList
-
 
 private class Codec {
     private val spliter = ","

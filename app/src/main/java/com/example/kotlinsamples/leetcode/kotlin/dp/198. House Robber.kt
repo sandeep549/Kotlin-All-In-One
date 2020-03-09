@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.dp
 
-
 /**
  * f(n) = Max(              // max amount to robbed till n
  *           f(n-2) + A[n], // max amount robbed till n-2 and current house

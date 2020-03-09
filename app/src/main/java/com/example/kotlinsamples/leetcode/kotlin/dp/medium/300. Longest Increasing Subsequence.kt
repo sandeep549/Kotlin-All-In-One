@@ -6,8 +6,8 @@ package com.example.kotlinsamples.leetcode.kotlin.dp.medium
  */
 private fun lengthOfLIS(nums: IntArray): Int {
     var ans = 1
-    var dp = IntArray(nums.size) { 0 } //min list will be 1 at any index, so 0 initial value is fine
-    fun lis(i: Int): Int { //returns lis ending at index i, including index i
+    var dp = IntArray(nums.size) { 0 } // min list will be 1 at any index, so 0 initial value is fine
+    fun lis(i: Int): Int { // returns lis ending at index i, including index i
         if (i == 0) return 1
         if (dp[i] != 0) return dp[i]
         var lisHere = 1 // min value for standalone element

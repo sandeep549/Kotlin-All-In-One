@@ -38,14 +38,14 @@ private fun twoSum3(nums: IntArray, target: Int): IntArray {
 }
 
 private fun twoSum4(nums: IntArray, target: Int): IntArray {
-    var x = -1;
-    var y = -1;
+    var x = -1
+    var y = -1
     for (i in nums.indices) {
-        val j = nums.lastIndexOf(target - nums[i]);
+        val j = nums.lastIndexOf(target - nums[i])
         if (j > i) {
-            x = i;
-            y = j;
-            break;
+            x = i
+            y = j
+            break
         }
     }
     return intArrayOf(x, y)

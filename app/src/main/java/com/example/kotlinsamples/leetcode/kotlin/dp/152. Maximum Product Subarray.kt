@@ -28,7 +28,7 @@ fun main() {
     println(maxProduct(intArrayOf(2, -5, -2, -4, 3)))
 }
 
-//dp, top-down
+// dp, top-down
 // though StackOverFlow for big array size, works well for small
 lateinit var dpmax: IntArray
 lateinit var dpmin: IntArray
@@ -37,7 +37,7 @@ private fun maxProduct(nums: IntArray): Int {
     dpmin = IntArray(nums.size)
     var dp = IntArray(nums.size)
     fun maxproduct(n: Int): Int {
-        if(n == 0) return nums[0]
+        if (n == 0) return nums[0]
         if (dp[n] == 0) {
             dp[n] = (maxproduct(n - 1))
                 .coerceAtLeast(minEndingAtIndex(n - 1, nums) * nums[n])
@@ -51,18 +51,18 @@ private fun maxProduct(nums: IntArray): Int {
 
 private fun maxEndingAtIndex(i: Int, nums: IntArray): Int {
     if (i == 0) return nums[0]
-    if(dpmax[i] == 0){
+    if (dpmax[i] == 0) {
         dpmax[i] = nums[i].coerceAtLeast(maxEndingAtIndex(i - 1, nums) * nums[i])
-                            .coerceAtLeast(minEndingAtIndex(i-1, nums) * nums[i])
+                            .coerceAtLeast(minEndingAtIndex(i - 1, nums) * nums[i])
     }
     return dpmax[i]
 }
 
 private fun minEndingAtIndex(i: Int, nums: IntArray): Int {
     if (i == 0) return nums[0]
-    if(dpmin[i] == 0){
+    if (dpmin[i] == 0) {
         dpmin[i] = nums[i].coerceAtMost(maxEndingAtIndex(i - 1, nums) * nums[i])
-            .coerceAtMost(minEndingAtIndex(i-1, nums) * nums[i])
+            .coerceAtMost(minEndingAtIndex(i - 1, nums) * nums[i])
     }
     return dpmin[i]
 }

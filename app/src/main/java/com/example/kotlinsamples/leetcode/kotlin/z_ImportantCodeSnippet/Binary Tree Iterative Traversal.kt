@@ -28,7 +28,7 @@ private fun preorderTraversal2(root: TreeNode?): List<Int> {
 private fun inorderTraversal2(root: TreeNode?): List<Int> {
     val list = ArrayList<Int>()
     var curr = root
-    val stack = ArrayDeque<TreeNode>() //Stack is legacy and deprecated
+    val stack = ArrayDeque<TreeNode>() // Stack is legacy and deprecated
     while (curr != null || !stack.isEmpty()) {
         while (curr != null) {
             stack.push(curr)
@@ -54,9 +54,9 @@ private fun postorderTraversal2(root: TreeNode?): List<Int> {
     while (!stack.isEmpty()) {
         cur = stack.peek()
         if (cur!!.left == null && cur.right == null || pre != null && (pre == cur.left || pre == cur.right)) {
-            result.add(cur.`val`) //deal with topological dependency
-            stack.pop() //stack top value is processed, remove it now
-            pre = cur //for backtracking
+            result.add(cur.`val`) // deal with topological dependency
+            stack.pop() // stack top value is processed, remove it now
+            pre = cur // for backtracking
         } else {
             if (cur.right != null) {
                 stack.push(cur.right)

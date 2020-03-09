@@ -19,7 +19,6 @@ private class LRUCache(capacity: Int) {
 
         head.next = tail
         tail.pre = head
-
     }
 
     private fun addNode(node: DLinkedNode) {

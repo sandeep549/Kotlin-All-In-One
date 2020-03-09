@@ -2,7 +2,7 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 
 import java.util.*
 
-//use of global k is discouraged, so see next solution
+// use of global k is discouraged, so see next solution
 private fun kthSmallest(root: TreeNode?, k: Int): Int {
     var k = k
     var ans = 0

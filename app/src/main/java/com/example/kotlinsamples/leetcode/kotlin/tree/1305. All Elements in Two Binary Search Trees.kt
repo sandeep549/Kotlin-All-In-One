@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 // Taken from
 // https://leetcode.com/problems/all-elements-in-two-binary-search-trees/discuss/464368/Short-O(n)-Python
 // In Java also, time performance is almost O(n) when input is almost sorted, which is true in this case.
@@ -19,7 +18,7 @@ private fun getAllElements(root1: TreeNode?, root2: TreeNode?): List<Int> {
     }
     dfs(root1)
     dfs(root2)
-    ans.sort() //Timsort, almost O(n) performance
+    ans.sort() // Timsort, almost O(n) performance
     return ans
 }
 

@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
-//backtracking
+// backtracking
 /**
  * Traverse the tree in dfs, and while backtrack, keep track of 2 things
  * 1. Max of (Max distance between any 2 nodes under this node, and max_so_far)
@@ -23,4 +23,4 @@ private fun diameterOfBinaryTree(root: TreeNode?): Int {
     return ans
 }
 
-//TODO : try iteratively
+// TODO : try iteratively

@@ -13,7 +13,7 @@ entries from j up to (but not including) k are values not yet sorted, and
 entries from k to the end of the array are values greater than mid.
  */
 
-private fun threeWayPartition(nums: IntArray): Unit {
+private fun threeWayPartition(nums: IntArray) {
     var i = 0
     var j = 0
     var k = nums.size

@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 private fun preorderTraversal(root: TreeNode?): List<Int> {
     val output: MutableList<Int> = ArrayList()
     fun dfs(root: TreeNode?) {
@@ -17,7 +16,7 @@ private fun preorderTraversal(root: TreeNode?): List<Int> {
     return output
 }
 
-//iterative-1
+// iterative-1
 private fun preorderTraversal2(root: TreeNode?): List<Int> {
     val stack: ArrayDeque<TreeNode> = ArrayDeque()
     val output: MutableList<Int> = ArrayList()
@@ -39,7 +38,7 @@ private fun preorderTraversal2(root: TreeNode?): List<Int> {
     return output
 }
 
-//iterative-2
+// iterative-2
 // only store right children to the stack
 private fun preorderTraversal3(root: TreeNode?): List<Int> {
     val list: MutableList<Int> = LinkedList()

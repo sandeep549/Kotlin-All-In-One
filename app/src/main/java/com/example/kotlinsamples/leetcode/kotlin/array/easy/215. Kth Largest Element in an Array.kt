@@ -18,7 +18,7 @@ private fun findKthLargest2(nums: IntArray, k: Int): Int {
     return priorityQueue.poll()
 }
 
-//todo: check quick select algorithms for O(n) result
+// todo: check quick select algorithms for O(n) result
 // https://leetcode.com/problems/kth-largest-element-in-an-array/solution/
-//https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60294/Solution-explained
-//https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60312/AC-Clean-QuickSelect-Java-solution-avg.-O(n)-time
+// https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60294/Solution-explained
+// https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60312/AC-Clean-QuickSelect-Java-solution-avg.-O(n)-time

@@ -12,7 +12,7 @@ private fun isValidBST(root: TreeNode?): Boolean {
     return dfs(root, null, null)
 }
 
-//same as above only kotlin construct difference
+// same as above only kotlin construct difference
 private fun isValidBST2(root: TreeNode?): Boolean {
     fun dfs(node: TreeNode?, l: Int?, r: Int?): Boolean {
         node ?: return true

@@ -6,9 +6,9 @@ package com.example.kotlinsamples.leetcode.kotlin.dp
  * G(n) = Min(R(n-1), B(n-1)) + arr[n][2]
  */
 
-//#######################
+// #######################
 // top-down, recursive
-//#######################
+// #######################
 private lateinit var cost: Array<IntArray>
 private lateinit var mincost: Array<IntArray>
 private fun minCost(costs: Array<IntArray>): Int {
@@ -39,9 +39,9 @@ private fun green(n: Int): Int {
     return mincost[n][2]
 }
 
-//#######################
+// #######################
 // bottom-up, iterative
-//#######################
+// #######################
 
 private fun minCost2(costs: Array<IntArray>): Int {
     if (costs.isEmpty()) return 0
@@ -51,11 +51,11 @@ private fun minCost2(costs: Array<IntArray>): Int {
     // At every step consider min cost when current house is painted with RED,GREEN or BLUE color
     for (i in 1 until costs.size) {
         val curR =
-            lastG.coerceAtMost(lastB) + costs[i][0] //min cost when current house is painted RED
+            lastG.coerceAtMost(lastB) + costs[i][0] // min cost when current house is painted RED
         val curG =
-            lastR.coerceAtMost(lastB) + costs[i][1] //min cost when current house is painted GREEN
+            lastR.coerceAtMost(lastB) + costs[i][1] // min cost when current house is painted GREEN
         val curB =
-            lastR.coerceAtMost(lastG) + costs[i][2] //min cost when current house is painted BLUE
+            lastR.coerceAtMost(lastG) + costs[i][2] // min cost when current house is painted BLUE
         lastR = curR
         lastG = curG
         lastB = curB

@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.math
 
-
 private fun reverse(x: Int): Int {
     var x = x
     var res = 0

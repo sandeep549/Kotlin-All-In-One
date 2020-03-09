@@ -6,10 +6,10 @@ private fun findDuplicate(nums: IntArray): Int {
         if (set.contains(a)) return a
         set.add(a)
     }
-    return 0 //we must never come here
+    return 0 // we must never come here
 }
 
-//O(n); floyd cycle detection
+// O(n); floyd cycle detection
 private fun findDuplicate2(nums: IntArray): Int {
     var slow = nums[0]
     var fast = nums[0]

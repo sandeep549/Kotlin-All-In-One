@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-
 // using comparator
 private fun sortArray(twoDArray: Array<IntArray>) {
 
@@ -15,9 +14,7 @@ private fun sortArray(twoDArray: Array<IntArray>) {
         override fun compare(p0: IntArray?, p1: IntArray?): Int {
             return p0!![1] - p1!![1]
         }
-
     })
-
 }
 
 fun main() {
@@ -28,7 +25,6 @@ fun main() {
 //    IntStream.range(0,20).parallel().forEach(i->{
 //        ... do something here
 //    });
-
 }
 
 private fun arrayOverFlow() {
@@ -55,11 +51,11 @@ private fun findMode() {
     /**
      * sort map with max value frequency and return IntArray of keys.
      */
-    //1.
+    // 1.
     val maxVal = count.map { it.value }.max() ?: 0
     var arr: IntArray = count.filter { it.value >= maxVal }.map { it.key }.toIntArray()
 
-    //2.
+    // 2.
     arr = count.filter {
         it.value >= count.maxBy { it.value }!!.value
     }.map {
@@ -67,14 +63,14 @@ private fun findMode() {
     }.toIntArray()
 }
 
-//using pair and tripple
+// using pair and tripple
 private fun PairExample() {
     var p = Pair("sandeep", 1)
     println(p.first)
     println(p.second)
 }
 
-//using pair and tripple
+// using pair and tripple
 private fun TrippleExample() {
     var p = Triple("sandeep", 1, 4.9)
     println(p.first)
@@ -82,7 +78,7 @@ private fun TrippleExample() {
     println(p.third)
 }
 
-//find min index of smallest abs value in array
+// find min index of smallest abs value in array
 private fun minIndex() {
     var arr = intArrayOf(3, 2, -1, 6, 9, 0)
     println(arr.indexOf(arr.minBy { i -> (i) }!!))

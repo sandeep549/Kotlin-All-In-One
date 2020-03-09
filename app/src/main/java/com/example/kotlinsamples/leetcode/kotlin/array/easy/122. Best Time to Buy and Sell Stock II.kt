@@ -58,15 +58,15 @@ private fun maxProfit3(prices: IntArray): Int {
     var profit = 0
     var i = 0
     while (i < prices.size - 1) {
-        //going down till we find a valley
+        // going down till we find a valley
         while (i < prices.size - 1 && prices[i + 1] <= prices[i]) i++
         valley = prices[i]
 
-        //going up till we find a peak
+        // going up till we find a peak
         while (i < prices.size - 1 && prices[i + 1] >= prices[i]) i++
         peak = prices[i]
 
-        //time to book profit
+        // time to book profit
         profit += peak - valley
     }
     return profit

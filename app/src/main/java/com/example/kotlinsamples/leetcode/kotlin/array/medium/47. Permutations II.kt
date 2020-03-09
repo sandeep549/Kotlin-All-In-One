@@ -10,7 +10,7 @@ private fun permuteUnique(nums: IntArray): List<List<Int>> {
             for (i in nums.indices) {
                 // below both conditions work, see working carefully, commented one is more efficient
                 if (used[i] || i > 0 && nums[i] == nums[i - 1] && used[i - 1]) continue
-                //if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue
+                // if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i-1]) continue
                 tmpList.add(nums[i])
                 used[i] = true
                 backtrack(tmpList, used, level + 1)

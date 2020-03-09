@@ -8,7 +8,6 @@ fun main() {
 
     println(maxProfit3(intArrayOf(7, 1, 5, 3, 6, 4)))
     println(maxProfit3(intArrayOf(7, 6, 4, 3, 1)))
-
 }
 
 /**
@@ -35,7 +34,6 @@ private fun maxProfit2(prices: IntArray): Int {
     }
     return maxsofar
 }
-
 
 /**
  * Iterate from left to right, try selling at every point retaining max profit found so far,

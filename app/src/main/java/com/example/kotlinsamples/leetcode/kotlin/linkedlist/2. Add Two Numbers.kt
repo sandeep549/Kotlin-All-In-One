@@ -57,4 +57,3 @@ private fun addTwoNumbers2(l1: ListNode?, l2: ListNode?): ListNode? {
     if (carry != 0) cur!!.next = ListNode(carry)
     return dummy.next
 }
-

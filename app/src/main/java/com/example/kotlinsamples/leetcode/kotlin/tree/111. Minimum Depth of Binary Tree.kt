@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree
 
-
 private fun minDepth(root: TreeNode?): Int {
     fun dfs(root: TreeNode): Int {
         if (root.left == null && root.right == null) return 1
@@ -19,4 +18,4 @@ private fun minDepth2(root: TreeNode?): Int {
     return if (left == 0 || right == 0) left + right + 1 else Math.min(left, right) + 1
 }
 
-//todo: try with bfs or iteration
+// todo: try with bfs or iteration

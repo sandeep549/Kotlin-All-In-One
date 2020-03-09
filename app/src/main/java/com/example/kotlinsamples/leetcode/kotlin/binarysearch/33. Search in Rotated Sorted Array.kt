@@ -3,7 +3,7 @@ package com.example.kotlinsamples.leetcode.kotlin.binarysearch
 private fun search(nums: IntArray, target: Int): Int {
     if (nums.isEmpty()) return -1
 
-    //find smallest element, use it's index as rotation count
+    // find smallest element, use it's index as rotation count
     var l = 0
     var r = nums.lastIndex
     var mid = 0
@@ -25,8 +25,8 @@ private fun search(nums: IntArray, target: Int): Int {
     return if (nums[(l + rot) % nums.size] == target) (l + rot) % nums.size else -1
 }
 
-//from solution
-//https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/Clever-idea-making-it-simple
+// from solution
+// https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/Clever-idea-making-it-simple
 private fun search2(nums: IntArray, target: Int): Int {
     if (nums.isEmpty()) return -1
     var l = 0
@@ -46,4 +46,3 @@ private fun search2(nums: IntArray, target: Int): Int {
     }
     return if (nums[l] == target) l else -1
 }
-

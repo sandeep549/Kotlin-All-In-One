@@ -1,7 +1,6 @@
 package com.example.kotlinsamples.delegates
 
 import kotlin.properties.Delegates
-import kotlin.reflect.KProperty
 
 fun main() {
     println(name)

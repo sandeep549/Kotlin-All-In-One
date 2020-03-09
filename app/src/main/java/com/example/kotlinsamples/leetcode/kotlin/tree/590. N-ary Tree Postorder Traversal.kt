@@ -38,8 +38,8 @@ private fun postorder2(root: NTreeNode?): List<Int> {
             ))
         ) {
             result.add(cur.`val`)
-            stack.pop() //remove stack top as its processed
-            pre = cur //for backtracking
+            stack.pop() // remove stack top as its processed
+            pre = cur // for backtracking
         } else {
             cur.children?.let {
                 for (node in it.reversed()) stack.push(node)

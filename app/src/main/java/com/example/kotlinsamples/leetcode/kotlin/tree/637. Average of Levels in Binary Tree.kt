@@ -3,8 +3,7 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
-
-//not tested, please re-test it
+// not tested, please re-test it
 private fun averageOfLevels(root: TreeNode?): DoubleArray {
     var list = ArrayList<Pair<Int, Double>>()
     fun dfs(root: TreeNode, level: Int) {

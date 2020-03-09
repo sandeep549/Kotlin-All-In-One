@@ -22,7 +22,7 @@ fun toHex(n: Int): String {
     var n = n
     while (n != 0) {
         ans.append(map[n.and(0x0f)])
-        n = n.ushr(4) //we want logical shift right(i.e. unsigned), don't want to preserve sign bit
+        n = n.ushr(4) // we want logical shift right(i.e. unsigned), don't want to preserve sign bit
     }
     return ans.reverse().toString()
 }
@@ -39,7 +39,7 @@ fun toHex2(n: Int): String {
     var n = n
     while (n != 0) {
         ans.append(map[n.and(0b1111)])
-        n = n.ushr(4) //we want logical shift right(i.e. unsigned), don't want to preserve sign bit
+        n = n.ushr(4) // we want logical shift right(i.e. unsigned), don't want to preserve sign bit
     }
     return ans.reverse().toString()
 }

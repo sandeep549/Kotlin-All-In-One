@@ -20,7 +20,7 @@ private fun inorderTraversal(root: TreeNode?): List<Int> {
 private fun inorderTraversal2(root: TreeNode?): List<Int> {
     val list = ArrayList<Int>()
     var curr = root
-    val stack = ArrayDeque<TreeNode>() //Stack is legacy and deprecated
+    val stack = ArrayDeque<TreeNode>() // Stack is legacy and deprecated
     while (curr != null || !stack.isEmpty()) {
         while (curr != null) {
             stack.push(curr)
@@ -36,7 +36,7 @@ private fun inorderTraversal2(root: TreeNode?): List<Int> {
 private fun inorderTraversal3(root: TreeNode?): List<Int> {
     val list = ArrayList<Int>()
     var curr = root
-    val stack = ArrayDeque<TreeNode>() //Stack is legacy and deprecated
+    val stack = ArrayDeque<TreeNode>() // Stack is legacy and deprecated
     while (curr != null || !stack.isEmpty()) {
         if (curr != null) {
             stack.push(curr)

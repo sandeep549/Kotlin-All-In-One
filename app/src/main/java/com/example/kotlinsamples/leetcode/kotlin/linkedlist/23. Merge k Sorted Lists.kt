@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.linkedlist
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 // Upper Bound -> O(N * klogk)
 // N = no of total node in all lists
 // k = no of lists
@@ -29,7 +28,7 @@ private fun mergeKLists(lists: Array<ListNode?>): ListNode? {
 
 private fun mergeKLists2(lists: Array<ListNode?>): ListNode? {
     if (lists.isEmpty()) return null
-    var dummyhead = ListNode(0) //dummy node
+    var dummyhead = ListNode(0) // dummy node
     var tail = dummyhead
     var queue = PriorityQueue<ListNode>(lists.size) { l1, l2 -> l1.`val` - l2.`val` }
     lists.forEach { it?.let { queue.add(it) } }

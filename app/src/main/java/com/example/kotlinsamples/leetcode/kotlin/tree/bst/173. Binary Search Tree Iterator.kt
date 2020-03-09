@@ -29,7 +29,6 @@ private class BSTIterator(root: TreeNode?) {
     fun hasNext(): Boolean {
         return (index + 1) < sortedList.size
     }
-
 }
 
 private class BSTIterator2(root: TreeNode?) {
@@ -59,5 +58,4 @@ private class BSTIterator2(root: TreeNode?) {
     fun hasNext(): Boolean {
         return stack.size > 1
     }
-
 }

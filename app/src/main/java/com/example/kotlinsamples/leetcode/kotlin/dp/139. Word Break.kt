@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.dp
 
-//Recursion, time limit exceeded
+// Recursion, time limit exceeded
 private fun wordBreak(s: String, wordDict: List<String>): Boolean {
     var set = wordDict.toSet()
     fun isWord(start: Int, end: Int) = set.contains(s.substring(start, end + 1))
@@ -18,8 +18,8 @@ private fun wordBreak(s: String, wordDict: List<String>): Boolean {
     return canBreak(0, s.lastIndex)
 }
 
-//dp, bottom-up, recursive
-//O(n^2)
+// dp, bottom-up, recursive
+// O(n^2)
 // O(n)
 private fun wordBreak2(s: String, wordDict: List<String>): Boolean {
     var set = wordDict.toSet()
@@ -42,8 +42,8 @@ private fun wordBreak2(s: String, wordDict: List<String>): Boolean {
     return canBreak(0, s.lastIndex)
 }
 
-//dp, bottom-up, iterative
-//O(n^2)
+// dp, bottom-up, iterative
+// O(n^2)
 // O(n)
 fun wordBreak3(s: String, wordDict: List<String?>): Boolean {
     val set = wordDict.toSet()

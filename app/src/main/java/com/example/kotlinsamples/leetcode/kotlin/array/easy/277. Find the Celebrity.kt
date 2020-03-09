@@ -6,7 +6,7 @@ fun knows(a: Int, b: Int): Boolean = true
 private fun findCelebrity(n: Int): Int {
     var flag = false
     for (i in 0..n - 1) {
-        //lets say i is celebrity
+        // lets say i is celebrity
         flag = true
         for (j in 0..n - 1) {
             if (i == j) continue

@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.greedy
 
-
 private fun minSetSize(arr: IntArray): Int {
     var map = arr.groupBy { it }.mapValues { it.value.size }.toList().sortedByDescending { it.second }
     var cnt = 0
@@ -13,4 +12,4 @@ private fun minSetSize(arr: IntArray): Int {
     return ans
 }
 
-//todo: see https://leetcode.com/problems/reduce-array-size-to-the-half/discuss/496714/Java-O(N)-solution
+// todo: see https://leetcode.com/problems/reduce-array-size-to-the-half/discuss/496714/Java-O(N)-solution

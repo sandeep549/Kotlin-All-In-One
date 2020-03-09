@@ -32,6 +32,3 @@ private fun isAlienSorted(words: Array<String>, order: String): Boolean {
     }
     return true
 }
-
-
-

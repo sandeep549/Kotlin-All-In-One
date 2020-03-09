@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.slidingwindow
 
-
 private fun maxSlidingWindow(nums: IntArray, k: Int): IntArray {
     val n = nums.size
     if (n * k == 0) return IntArray(0)

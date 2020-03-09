@@ -29,7 +29,6 @@ private class MinStack() {
     fun getMin(): Int {
         return minstack.peek()
     }
-
 }
 
 private class MinStack2 {

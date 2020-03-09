@@ -12,4 +12,4 @@ private fun maxDepth2(n: TreeNode?): Int {
     return if (n == null) 0 else maxOf(maxDepth2(n.left), maxDepth2(n.right)) + 1
 }
 
-//todo: do it iteratively
+// todo: do it iteratively

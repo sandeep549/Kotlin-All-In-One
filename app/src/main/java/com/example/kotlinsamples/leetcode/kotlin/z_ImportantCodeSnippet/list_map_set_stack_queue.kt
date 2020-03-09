@@ -3,19 +3,18 @@ package com.example.kotlinsamples.leetcode.kotlin.z_ImportantCodeSnippet
 import java.util.*
 
 private fun listInKotlin() {
-    //1
+    // 1
     var l1 = listOf<Int>() // read-only, random access like ArrayList
-    //2
+    // 2
     var l2 = mutableListOf<Int>() // mutable, random access like ArrayList
-    //work with above 2 whenever possible
+    // work with above 2 whenever possible
 
-
-    //3
+    // 3
     var l3 = arrayListOf<Int>() // same as 2, mutable ArrayList
-    var l4 = emptyList<Int>()// read-only, random access
-    var l5 = listOfNotNull<Int>() //read-only, random access
+    var l4 = emptyList<Int>() // read-only, random access
+    var l5 = listOfNotNull<Int>() // read-only, random access
 
-    //No sequential access list in kotlin ???
+    // No sequential access list in kotlin ???
 }
 
 private fun mapsInKotlin() {
@@ -25,10 +24,10 @@ private fun mapsInKotlin() {
     /*2*/
     var mutableMap = mutableMapOf<Int, Int>() // maintains order, mutable
 
-    //work with below 3 whenever possible
-    //factory method for java maps
+    // work with below 3 whenever possible
+    // factory method for java maps
     /*3*/
-    var sortedmap = sortedMapOf<Int, Int>() //java TreeMap, mutable
+    var sortedmap = sortedMapOf<Int, Int>() // java TreeMap, mutable
     /*4*/
     var hasmap = hashMapOf<Int, Int>() // java HashMap, mutable
     /*5*/
@@ -40,7 +39,7 @@ fun main() {
 }
 
 private fun PleaseRunToBetterUnderstandMe() {
-    val m: Deque<Int> = LinkedList()//ArrayDeque()
+    val m: Deque<Int> = LinkedList() // ArrayDeque()
     m.push(1)
     m.push(2)
     m.push(3)
@@ -73,7 +72,7 @@ private fun PleaseRunToBetterUnderstandMe() {
  * peek()
  */
 private fun stackInKotlin() {
-    //1
+    // 1
     val stack1: Deque<Int> = ArrayDeque()
     stack1.push(1)
     stack1.push(2)
@@ -83,7 +82,7 @@ private fun stackInKotlin() {
     stack1.isEmpty()
     stack1.size
 
-    //2
+    // 2
     val stack2: Deque<Int> = LinkedList()
     stack2.push(1)
     stack2.push(2)
@@ -92,9 +91,7 @@ private fun stackInKotlin() {
     stack2.peekFirst()
     stack2.isEmpty()
     stack2.size
-
 }
-
 
 /**
  * Queue:
@@ -103,7 +100,7 @@ private fun stackInKotlin() {
  * peek()
  */
 private fun queueInKotlin() {
-    //1
+    // 1
     val queue1: Deque<Int> = ArrayDeque()
     queue1.add(1)
     queue1.add(2)
@@ -112,7 +109,7 @@ private fun queueInKotlin() {
     queue1.isEmpty()
     queue1.size
 
-    //2
+    // 2
     var queue2: Deque<Int> = LinkedList()
     queue2.offer(1)
     queue2.offer(2)

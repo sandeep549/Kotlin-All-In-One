@@ -3,7 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.hashtable
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 /**
 A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
 
@@ -21,7 +20,7 @@ fun main() {
 
 // O(no count to check * size of each number)
 // O(10^n * n)
-//Time Limit Exceeded
+// Time Limit Exceeded
 private fun findStrobogrammatic(n: Int): List<String> {
     var map = mapOf<Char, Char>('0' to '0', '1' to '1', '6' to '9', '8' to '8', '9' to '6')
     fun check(num: String): Boolean {
@@ -45,11 +44,11 @@ private fun findStrobogrammatic(n: Int): List<String> {
     return ans
 }
 
-//O(n) recursive
-//TODO do it without recursion
+// O(n) recursive
+// TODO do it without recursion
 fun findStrobogrammatic2(n: Int): List<String>? {
     fun helper(n: Int, m: Int): List<String> {
-        if (n == 0) return ArrayList(listOf(""))//its not empty list,list with one empty space item
+        if (n == 0) return ArrayList(listOf("")) // its not empty list,list with one empty space item
         if (n == 1) return ArrayList(listOf("0", "1", "8"))
         val list = helper(n - 2, m)
         val res = ArrayList<String>()
@@ -65,4 +64,3 @@ fun findStrobogrammatic2(n: Int): List<String>? {
     }
     return helper(n, n)
 }
-

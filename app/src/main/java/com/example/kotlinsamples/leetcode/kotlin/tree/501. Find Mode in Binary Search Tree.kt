@@ -3,8 +3,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import android.annotation.SuppressLint
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
-
 
 /**
  * Traverse the tree and maintain hashmap of all elements with their frequencies.
@@ -15,7 +13,7 @@ import kotlin.collections.HashMap
 @SuppressLint("NewApi")
 private fun findMode(root: TreeNode?): IntArray {
     if (root == null) return intArrayOf()
-    var map = hashMapOf<Int, Int>()//HashMap<Int, Int>()
+    var map = hashMapOf<Int, Int>() // HashMap<Int, Int>()
     fun dfs(root: TreeNode?) {
         root?.let {
             map.put(it.`val`, map.getOrDefault(it.`val`, 0) + 1)
@@ -51,7 +49,7 @@ private fun findMode2(root: TreeNode?): IntArray {
                 ans.clear()
                 ans.add(curr)
             }
-            last = curr //for first element
+            last = curr // for first element
             max_so_far = max_so_far.coerceAtLeast(frequency)
         } else {
             last = curr
@@ -71,7 +69,6 @@ private fun findMode2(root: TreeNode?): IntArray {
     return ans.toIntArray()
 }
 
-
 /**
  * Same as above but iterative solution
  */
@@ -90,7 +87,7 @@ private fun findMode3(root: TreeNode?): IntArray {
                 ans.clear()
                 ans.add(curr)
             }
-            last = curr //for first element
+            last = curr // for first element
             max_so_far = max_so_far.coerceAtLeast(frequency)
         } else {
             last = curr
@@ -112,4 +109,3 @@ private fun findMode3(root: TreeNode?): IntArray {
     }
     return ans.toIntArray()
 }
-

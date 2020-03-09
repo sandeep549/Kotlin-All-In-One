@@ -2,7 +2,7 @@ package com.example.kotlinsamples.leetcode.kotlin.hashtable
 
 import android.annotation.SuppressLint
 
-//bucket sort
+// bucket sort
 @SuppressLint("NewApi")
 private fun frequencySort(s: String): String {
     val map = mutableMapOf<Char, Int>()

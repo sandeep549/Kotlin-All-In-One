@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.medium
 
-//TLE
+// TLE
 private fun numFriendRequests(ages: IntArray): Int {
     fun canRequest(aAge: Int, bAge: Int) = (bAge <= aAge && (bAge >= 0.5 * aAge + 7))
     var ans = 0
@@ -13,12 +13,12 @@ private fun numFriendRequests(ages: IntArray): Int {
     return ans
 }
 
-//Time complexity: O(n)
+// Time complexity: O(n)
 private fun numFriendRequests2(ages: IntArray): Int {
     val count = IntArray(121)
-    for (age in ages) count[age]++ //this gives us O(n) time
+    for (age in ages) count[age]++ // this gives us O(n) time
 
-    //below code doesn't depend on input size
+    // below code doesn't depend on input size
     var ans = 0
     for (ageA in 0..120) {
         val countA = count[ageA]
@@ -28,11 +28,9 @@ private fun numFriendRequests2(ages: IntArray): Int {
             if (ageA < ageB) continue
             if (ageA < 100 && 100 < ageB) continue
             ans += countA * countB
-            if (ageA == ageB) ans -= countA //important condition to avoid self requests
+            if (ageA == ageB) ans -= countA // important condition to avoid self requests
         }
     }
 
     return ans
 }
-
-

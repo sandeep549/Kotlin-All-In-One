@@ -3,12 +3,12 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 import java.util.*
 import kotlin.collections.ArrayList
 
-//bfs
+// bfs
 fun levelOrderBottom(root: TreeNode?): List<List<Int>> {
     var res = mutableListOf<MutableList<Int>>()
     if (root == null) return res
-    var queue = ArrayDeque<TreeNode>() //for traversal
-    var stack = ArrayDeque<MutableList<Int>>() //for result storing;
+    var queue = ArrayDeque<TreeNode>() // for traversal
+    var stack = ArrayDeque<MutableList<Int>>() // for result storing;
     queue.add(root)
     while (!queue.isEmpty()) {
         var size = queue.size
@@ -26,7 +26,7 @@ fun levelOrderBottom(root: TreeNode?): List<List<Int>> {
     return res
 }
 
-//dfs
+// dfs
 fun levelOrderBottom2(root: TreeNode?): List<List<Int>> {
     var res = LinkedList<MutableList<Int>>()
     fun dfs(root: TreeNode?, level: Int) {
@@ -41,7 +41,7 @@ fun levelOrderBottom2(root: TreeNode?): List<List<Int>> {
     return res
 }
 
-//dfs
+// dfs
 fun levelOrderBottom3(root: TreeNode?): List<List<Int>> {
     var res = mutableListOf<MutableList<Int>>()
     fun dfs(root: TreeNode?, level: Int) {

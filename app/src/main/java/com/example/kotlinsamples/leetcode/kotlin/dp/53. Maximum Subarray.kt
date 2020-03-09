@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.dp
 
-
 /**
 
 1. Optimal structure
@@ -29,7 +28,7 @@ arr[n] = element at index n in given array
 private fun maxSubArray(arr: IntArray): Int {
     var dpi = IntArray(arr.size) { Int.MIN_VALUE }
 
-    //function to return max sum ending at index i
+    // function to return max sum ending at index i
     fun maxi(i: Int): Int {
         if (i == 0) return arr[0]
         if (dpi[i] > Int.MIN_VALUE) return dpi[i]
@@ -54,7 +53,7 @@ private fun maxSubArray(arr: IntArray): Int {
 private fun maxSubArray2(arr: IntArray): Int {
     var max_so_far = arr[0]
     var max_ending_here = arr[0]
-    for(i in 1..arr.lastIndex){
+    for (i in 1..arr.lastIndex) {
         max_ending_here = maxOf(max_ending_here + arr[i], arr[i])
         max_so_far = maxOf(max_so_far, max_ending_here)
     }

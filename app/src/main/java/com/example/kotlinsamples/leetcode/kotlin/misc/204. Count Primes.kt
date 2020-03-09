@@ -25,7 +25,7 @@ private fun countPrime(num: Int): Int {
 
 private fun countPrime2(num: Int): Int {
     var start = System.currentTimeMillis()
-    var count = 0;
+    var count = 0
     for (i in 2..num) {
         if (isprime(i)) count++
     }

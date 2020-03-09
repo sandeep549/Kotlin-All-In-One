@@ -50,10 +50,10 @@ private fun addTwoNumbers2(l1: ListNode?, l2: ListNode?): ListNode? {
         stack2.push(l2)
         l2 = l2.next
     }
-    //iterate till both stack are not empty and adding sum to new nodes
-    //At every iteration maintain quotient of earlier sum in first node and result in second node
+    // iterate till both stack are not empty and adding sum to new nodes
+    // At every iteration maintain quotient of earlier sum in first node and result in second node
     var resultNode = ListNode(0)
-    var sum = 0 //maintains carry also
+    var sum = 0 // maintains carry also
     while (!stack1.isEmpty() || !stack2.isEmpty()) {
         sum += if (!stack1.isEmpty()) stack1.pop().`val` else 0
         sum += if (!stack2.isEmpty()) stack2.pop().`val` else 0
@@ -61,7 +61,7 @@ private fun addTwoNumbers2(l1: ListNode?, l2: ListNode?): ListNode? {
         var quotientNode = ListNode(sum / 10)
         quotientNode.next = resultNode
         resultNode = quotientNode
-        sum /= 10 //consider carry
+        sum /= 10 // consider carry
     }
     return if (resultNode.`val` == 0) resultNode.next else resultNode
 }

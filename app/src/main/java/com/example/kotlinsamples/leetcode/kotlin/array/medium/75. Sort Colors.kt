@@ -1,8 +1,8 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.medium
 
-//https://en.wikipedia.org/wiki/Dutch_national_flag_problem
+// https://en.wikipedia.org/wiki/Dutch_national_flag_problem
 
-private fun sortColors(nums: IntArray): Unit {
+private fun sortColors(nums: IntArray) {
     var i = 0
     var j = 0
     var k = nums.size

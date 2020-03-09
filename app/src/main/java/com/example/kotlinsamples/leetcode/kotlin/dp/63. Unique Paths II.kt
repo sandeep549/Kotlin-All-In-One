@@ -23,14 +23,14 @@ private fun uniquePathsWithObstacles(m: Array<IntArray>): Int {
     var dp = Array(m.size) { IntArray(m.first().size) { 0 } }
     fun waystoReach(r: Int, c: Int): Int { // finds no of ways to reach at location (r, c)
         if (r < 0 || c < 0 || m[r][c] == 1) return 0
-        if (r == 0 && c == 0) return 1 //we reach at origin, base case
+        if (r == 0 && c == 0) return 1 // we reach at origin, base case
         if (dp[r][c] == 0) dp[r][c] = waystoReach(r, c - 1) + waystoReach(r - 1, c)
         return dp[r][c]
     }
     return waystoReach(m.size - 1, m.first().size - 1)
 }
 
-//dp, bottom-up
+// dp, bottom-up
 private fun uniquePathsWithObstacles2(m: Array<IntArray>): Int {
     fun ways(r: Int, c: Int): Int = if (r < 0 || c < 0) 0 else m[r][c]
     for (r in m.indices) {

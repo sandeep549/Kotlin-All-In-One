@@ -1,7 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.linkedlist
 
 fun main() {
-
 }
 
 private fun hasCycle(head: ListNode?): Boolean {
@@ -31,7 +30,7 @@ private fun hasCycle2(head: ListNode?): Boolean {
     return true
 }
 
-//Best version
+// Best version
 private fun hasCycle3(head: ListNode?): Boolean {
     var slow = head
     var fast = head

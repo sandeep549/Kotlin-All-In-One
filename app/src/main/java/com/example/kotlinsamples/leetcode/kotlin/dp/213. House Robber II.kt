@@ -17,7 +17,7 @@ private fun rob(nums: IntArray): Int {
         return dp[n]
     }
 
-    var a = find(nums.size - 1, true) //check with excluding first
+    var a = find(nums.size - 1, true) // check with excluding first
     dp.forEachIndexed { index, _ -> dp[index] = 0 }
     return a.coerceAtLeast(find(nums.size - 2, false)) // check with excluding last
 }

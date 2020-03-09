@@ -7,17 +7,17 @@ private fun accountsMerge(accounts: List<List<String>>): List<List<String>> {
     var owner = mutableMapOf<String, String>()
     for (act in accounts) {
         for (i in 1 until act.size) {
-            parent[act[i]] = act[i] //MakeSet operation
+            parent[act[i]] = act[i] // MakeSet operation
             owner[act[i]] = act[0]
         }
     }
 
-    //find operation; gives representative of this disjoint set
+    // find operation; gives representative of this disjoint set
     fun find(s: String, map: MutableMap<String, String>): String {
         return if (map[s] == s) s else find(map[s]!!, map)
     }
 
-    //perform union operation, mark first email as representative of set for each account
+    // perform union operation, mark first email as representative of set for each account
     for (act in accounts) {
         var rpt = find(act[1], parent)
         for (i in 1 until act.size) {
@@ -25,7 +25,7 @@ private fun accountsMerge(accounts: List<List<String>>): List<List<String>> {
         }
     }
 
-    //gather all email group, by their representative under a tree (b'coz we need emails sorted)
+    // gather all email group, by their representative under a tree (b'coz we need emails sorted)
     var groupMap = mutableMapOf<String, TreeSet<String>>()
     for (act in accounts) {
         var rpt = find(act[1], parent)
@@ -35,7 +35,7 @@ private fun accountsMerge(accounts: List<List<String>>): List<List<String>> {
         }
     }
 
-    //build required output
+    // build required output
     val listOfLists: MutableList<List<String>> = mutableListOf()
     for ((rpt, emails) in groupMap) {
         var emailList = emails.toMutableList()

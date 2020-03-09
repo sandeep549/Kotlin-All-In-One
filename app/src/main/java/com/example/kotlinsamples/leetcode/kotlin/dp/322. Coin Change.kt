@@ -23,7 +23,7 @@ private fun coinChange(coins: IntArray, amount: Int): Int {
     return if (ans < 0) -1 else ans
 }
 
-//private fun coinChange2(coins: IntArray, amount: Int): Int {
+// private fun coinChange2(coins: IntArray, amount: Int): Int {
 //    var MAX = amount + 1 // We can not have more coins than amount
 //    var dp = Array<Int?>(amount + 1) { null }
 //
@@ -37,12 +37,11 @@ private fun coinChange(coins: IntArray, amount: Int): Int {
 //        return min
 //    }
 //    return if (getMinCoinsFor(amount) == MAX) -1 else amount
-//}
+// }
 
-//todo: try to get coin used for min i.e. which coin is used in what count to get minimum
+// todo: try to get coin used for min i.e. which coin is used in what count to get minimum
 fun main() {
     println(coinChange(intArrayOf(1, 2, 5), 11))
     println(coinChange(intArrayOf(2), 3))
     println(coinChange(intArrayOf(186, 419, 83, 408), 6249))
 }
-

@@ -40,5 +40,5 @@ fun binaryTreePaths4(root: TreeNode?): List<String> {
     }
 }
 
-//TODO: do it with iteration
-//TODO: calculate exact time complexity
+// TODO: do it with iteration
+// TODO: calculate exact time complexity

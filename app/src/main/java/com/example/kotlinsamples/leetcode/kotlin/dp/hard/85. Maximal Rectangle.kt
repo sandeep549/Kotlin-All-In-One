@@ -34,20 +34,20 @@ private fun maximalRectangle2(matrix: Array<CharArray>): Int {
     if (matrix.isEmpty()) return 0
     var r = matrix.size
     var c = matrix[0].size
-    var left = IntArray(c) { 0 } //init left with leftmost boundary
-    var right = IntArray(c) { c } //init right with rightmost boundary
+    var left = IntArray(c) { 0 } // init left with leftmost boundary
+    var right = IntArray(c) { c } // init right with rightmost boundary
     var height = IntArray(c)
     var max = 0
     for (i in 0 until r) {
-        var cur_left = 0 //rightmost occurrence of zero encountered
+        var cur_left = 0 // rightmost occurrence of zero encountered
         var cur_right = c
-        //update height
+        // update height
         for (j in 0 until c) {
             if (matrix[i][j] == '1') height[j]++
             else height[j] = 0
         }
 
-        //update left
+        // update left
         for (j in 0 until c) {
             if (matrix[i][j] == '1') left[j] = maxOf(left[j], cur_left)
             else {
@@ -56,7 +56,7 @@ private fun maximalRectangle2(matrix: Array<CharArray>): Int {
             }
         }
 
-        //update right
+        // update right
         for (j in c - 1 downTo 0) {
             if (matrix[i][j] == '1') right[j] = minOf(right[j], cur_right)
             else {
@@ -65,7 +65,7 @@ private fun maximalRectangle2(matrix: Array<CharArray>): Int {
             }
         }
 
-        //update area
+        // update area
         for (j in 0 until c) {
             max = maxOf(max, ((right[j] - left[j]) * height[j]))
         }

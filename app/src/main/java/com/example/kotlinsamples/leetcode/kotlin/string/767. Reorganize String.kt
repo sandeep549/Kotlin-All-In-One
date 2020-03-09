@@ -62,7 +62,7 @@ private fun reorganizeString(S: String): String {
 }
 
 fun main() {
-    //println(reorganizeString("aab"))
+    // println(reorganizeString("aab"))
     println(reorganizeString2("aaab"))
 }
 

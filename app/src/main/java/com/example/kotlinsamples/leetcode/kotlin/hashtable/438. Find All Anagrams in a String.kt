@@ -5,7 +5,7 @@ fun main() {
     println(findAnagrams2("abab", "ab"))
 }
 
-//brute force
+// brute force
 private fun findAnagrams(s: String, p: String): List<Int> {
     var frequencyMap = p.toCharArray().groupBy { it }.mapValues { it.value.size }
     fun isAnagram(start: Int): Boolean {
@@ -28,14 +28,14 @@ private fun findAnagrams(s: String, p: String): List<Int> {
     return anslist
 }
 
-//sliding window
+// sliding window
 private fun findAnagrams2(s: String?, p: String?): List<Int> {
     if (p == null || s == null) return emptyList()
 
     val list = mutableListOf<Int>()
     var frequencyMap = p.toCharArray().groupBy { it }.mapValues { it.value.size }.toMutableMap()
 
-    //two points, initialize count to p's length
+    // two points, initialize count to p's length
     var left = 0
     var right = 0
     var matches = p.length

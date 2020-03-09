@@ -1,7 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.dp
 
-
-//dp, bottom-up
+// dp, bottom-up
 private fun tribonacci(n: Int): Int {
     if (n == 0) return 0
     var t0 = 0
@@ -16,7 +15,7 @@ private fun tribonacci(n: Int): Int {
     return t2
 }
 
-//dp, top-down
+// dp, top-down
 private fun tribonacci2(n: Int): Int {
     var dp = IntArray(n + 1) { 0 }
     fun calc(n: Int): Int {

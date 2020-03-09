@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.math
 
 import kotlin.math.sqrt
 
-
 private fun closestDivisors(num: Int): IntArray {
     var a = sqrt(num + 1.toDouble()).toInt()
     if (a * a == num + 1) return intArrayOf(a, a)

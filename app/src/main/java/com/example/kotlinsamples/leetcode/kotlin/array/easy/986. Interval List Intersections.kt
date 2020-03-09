@@ -1,14 +1,13 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.easy
 
-
 private fun intervalIntersection(A: Array<IntArray>, B: Array<IntArray>): Array<IntArray> {
     var i = 0
     var j = 0
     var anslist = mutableListOf<IntArray>()
     while (i < A.size && j < B.size) {
-        if (A[i][1] < B[j][0]) i++ //A's end is less than B's start, no intersection, move in A
-        else if (B[j][1] < A[i][0]) j++ //B's end is less than a's start, no intersection, move in B
-        else { //intersection case
+        if (A[i][1] < B[j][0]) i++ // A's end is less than B's start, no intersection, move in A
+        else if (B[j][1] < A[i][0]) j++ // B's end is less than a's start, no intersection, move in B
+        else { // intersection case
             anslist.add(intArrayOf(maxOf(A[i][0], B[j][0]), minOf(A[i][1], B[j][1])))
             if (A[i][1] < B[j][1]) i++
             else j++

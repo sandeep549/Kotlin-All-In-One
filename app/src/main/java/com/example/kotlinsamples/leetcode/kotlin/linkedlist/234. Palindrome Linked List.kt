@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin
 
 import com.example.kotlinsamples.leetcode.kotlin.linkedlist.ListNode
 
-
 // Solution-1
 fun isPalindrome(head: ListNode?): Boolean {
     if (head == null || head.next == null) return true
@@ -39,7 +38,7 @@ private fun reverse(head: ListNode?): ListNode? {
 }
 
 // Solution-2, tough needs more verification on edge cases to check
-//TODO verify it
+// TODO verify it
 private fun isPalindrome2(head: ListNode?): Boolean {
     var sum = 0
     var mul = -1

@@ -12,4 +12,4 @@ private fun getSum(a: Int, b: Int): Int {
     return a
 }
 
-//TODO write substract function in same way
+// TODO write substract function in same way

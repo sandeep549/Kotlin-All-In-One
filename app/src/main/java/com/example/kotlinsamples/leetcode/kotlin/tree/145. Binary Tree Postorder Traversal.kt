@@ -43,9 +43,9 @@ private fun postorderTraversal2(root: TreeNode?): List<Int> {
     while (!stack.isEmpty()) {
         cur = stack.peek()
         if (cur!!.left == null && cur.right == null || pre != null && (pre == cur.left || pre == cur.right)) {
-            result.add(cur.`val`) //deal with topological dependency
-            stack.pop() //stack top value is processed, remove it now
-            pre = cur //for backtracking
+            result.add(cur.`val`) // deal with topological dependency
+            stack.pop() // stack top value is processed, remove it now
+            pre = cur // for backtracking
         } else {
             if (cur.right != null) {
                 stack.push(cur.right)
@@ -71,9 +71,9 @@ private fun postorderTraversal3(root: TreeNode?): List<Int> {
         while (!stack.isEmpty()) {
             cur = stack.peek()
             if (cur!!.left == null && cur.right == null || pre != null && (pre == cur.left || pre == cur.right)) {
-                result.add(cur.`val`) //deal with topological dependency
-                stack.pop() //stack top value is processed, remove it now
-                pre = cur //for backtracking
+                result.add(cur.`val`) // deal with topological dependency
+                stack.pop() // stack top value is processed, remove it now
+                pre = cur // for backtracking
             } else {
                 cur.right?.let { stack.push(cur.right) }
                 cur.left?.let { stack.push(cur.left) }

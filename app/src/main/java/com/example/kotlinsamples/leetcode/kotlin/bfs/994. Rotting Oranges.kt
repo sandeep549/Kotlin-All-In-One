@@ -13,7 +13,7 @@ private fun orangesRotting(grid: Array<IntArray>): Int {
     var minute = 0
     while (fresh.size > 0) {
         var freshRotten = mutableListOf<Pair<Int, Int>>()
-        //println("rotten=" + rotten + ", fresh=" + fresh.size)
+        // println("rotten=" + rotten + ", fresh=" + fresh.size)
         for ((r, c) in rotten) {
             if (canRot(r, c - 1)) {
                 freshRotten.add(Pair(r, c - 1))
@@ -36,7 +36,7 @@ private fun orangesRotting(grid: Array<IntArray>): Int {
                 grid[r + 1][c] = 2
             }
         }
-        //println("freshRotten=" + freshRotten)
+        // println("freshRotten=" + freshRotten)
         if (freshRotten.size == 0) break
         minute++
         rotten = freshRotten
@@ -55,4 +55,3 @@ fun main() {
         )
     )
 }
-

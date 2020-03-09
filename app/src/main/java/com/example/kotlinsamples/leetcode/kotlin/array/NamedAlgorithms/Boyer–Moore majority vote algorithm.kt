@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.array.NamedAlgorithms
 
-//https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
+// https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
 
 // Boyer - Moore
 private fun majorityElement3(nums: IntArray): Int {

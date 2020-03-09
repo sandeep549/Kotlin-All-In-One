@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.array.medium
 
 import kotlin.random.Random
 
-
 private class RandomizedSet() {
 
     /** Initialize your data structure here. */
@@ -33,5 +32,4 @@ private class RandomizedSet() {
     fun getRandom(): Int {
         return list.get(Random.nextInt(list.size))
     }
-
 }

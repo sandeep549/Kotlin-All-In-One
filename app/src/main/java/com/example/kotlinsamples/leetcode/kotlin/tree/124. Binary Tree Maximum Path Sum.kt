@@ -17,12 +17,12 @@ private fun maxPathSum(root: TreeNode?): Int {
         if (root == null) return 0
         var l = max(root.left)
         var r = max(root.right)
-        max_so_far = max_so_far.coerceAtLeast(l + root.`val`) //max path till now
+        max_so_far = max_so_far.coerceAtLeast(l + root.`val`) // max path till now
             .coerceAtLeast(r + root.`val`)
             .coerceAtLeast(l + r + root.`val`)
             .coerceAtLeast(root.`val`)
 
-        return root.`val`.coerceAtLeast(l + root.`val`) //max passing through this node
+        return root.`val`.coerceAtLeast(l + root.`val`) // max passing through this node
             .coerceAtLeast(r + root.`val`)
     }
     max(root)
@@ -36,7 +36,7 @@ private fun maxPathSum2(root: TreeNode?): Int {
      */
     fun max(root: TreeNode?): Int {
         if (root == null) return 0
-        //if its negative, it will not add any value to max path, mark it 0
+        // if its negative, it will not add any value to max path, mark it 0
         var l = Math.max(0, max(root.left))
         var r = Math.max(0, max(root.right))
         max_so_far = Math.max(max_so_far, l + r + root.`val`)

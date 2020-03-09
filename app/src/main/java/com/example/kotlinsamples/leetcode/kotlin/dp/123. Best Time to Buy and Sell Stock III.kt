@@ -1,9 +1,9 @@
 package com.example.kotlinsamples.leetcode.kotlin.dp
 
 fun main() {
-    //println(maxProfit(intArrayOf(3, 3, 5, 0, 0, 3, 1, 4)))
+    // println(maxProfit(intArrayOf(3, 3, 5, 0, 0, 3, 1, 4)))
     println(maxProfit(intArrayOf(1, 2, 3, 4, 5)))
-    //println(maxProfit(intArrayOf(7,6,4,3,1)))
+    // println(maxProfit(intArrayOf(7,6,4,3,1)))
 }
 
 // 3,2 -> 2,2 -> 1,2 -> 0,2

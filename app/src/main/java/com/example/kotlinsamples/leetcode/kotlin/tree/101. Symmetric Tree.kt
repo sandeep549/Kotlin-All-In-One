@@ -11,7 +11,7 @@ private fun isSymmetric(root: TreeNode?): Boolean {
     return isMirror(root, root)
 }
 
-//todo: Not working; can u make it working with ArrayDeque?
+// todo: Not working; can u make it working with ArrayDeque?
 private fun isSymmetric2(root: TreeNode?): Boolean {
     if (root == null) return true
     fun bothNull(n1: TreeNode?, n2: TreeNode?) = (n1 == null && n2 == null)
@@ -25,7 +25,7 @@ private fun isSymmetric2(root: TreeNode?): Boolean {
 
         if (n1!!.`val` != n2!!.`val`) return false
 
-        if (bothNull(n1.left, n2.right)) continue //note: ArrayDeque do not allow null
+        if (bothNull(n1.left, n2.right)) continue // note: ArrayDeque do not allow null
         if (eitherNull(n1.left, n2.right)) return false
         queue.offer(n1.left)
         queue.offer(n2.right)
@@ -51,7 +51,7 @@ private fun isSymmetric3(root: TreeNode?): Boolean {
         if (n1 == null || n2 == null) return false
         if (n1.`val` != n2.`val`) return false
 
-        queue.offer(n1.left) //LinkedList allows null
+        queue.offer(n1.left) // LinkedList allows null
         queue.offer(n2.right)
 
         queue.offer(n1.right)
@@ -59,4 +59,3 @@ private fun isSymmetric3(root: TreeNode?): Boolean {
     }
     return true
 }
-

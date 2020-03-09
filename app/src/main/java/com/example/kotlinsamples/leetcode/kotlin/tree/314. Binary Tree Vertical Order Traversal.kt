@@ -2,7 +2,6 @@ package com.example.kotlinsamples.leetcode.kotlin.tree
 
 import java.util.*
 
-
 private fun verticalOrder(root: TreeNode?): List<List<Int>> {
     data class Node(val col: Int, val tnode: TreeNode)
 

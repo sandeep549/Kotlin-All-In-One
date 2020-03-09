@@ -21,7 +21,7 @@ private fun next(n: Int): Int {
     var s = 0
     var num = n
     while (num != 0) {
-        var i = num % 10;
+        var i = num % 10
         s += (i * i)
         num /= 10
     }

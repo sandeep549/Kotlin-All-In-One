@@ -17,4 +17,4 @@ private fun minDiffInBST(root: TreeNode?): Int {
     return min
 }
 
-//TODO : try with iterative approach
+// TODO : try with iterative approach

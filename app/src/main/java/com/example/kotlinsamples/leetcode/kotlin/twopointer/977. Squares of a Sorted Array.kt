@@ -1,6 +1,5 @@
 package com.example.kotlinsamples.leetcode.kotlin.twopointer
 
-
 fun main() {
     println(sortedSquares(intArrayOf(-4, -1, 0, 3, 10)).toList())
 }

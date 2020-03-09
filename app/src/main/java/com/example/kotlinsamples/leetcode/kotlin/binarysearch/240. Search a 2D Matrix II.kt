@@ -31,7 +31,3 @@ private fun searchMatrix2(matrix: Array<IntArray>, target: Int): Boolean {
     }
     return false
 }
-
-
-
-

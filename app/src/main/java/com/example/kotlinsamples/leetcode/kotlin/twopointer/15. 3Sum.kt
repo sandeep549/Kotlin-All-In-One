@@ -1,6 +1,6 @@
 package com.example.kotlinsamples.leetcode.kotlin.twopointer
 
-//O(n^2)
+// O(n^2)
 private fun threeSum(num: IntArray): List<List<Int>> {
     num.sort()
     val res = mutableListOf<List<Int>>()

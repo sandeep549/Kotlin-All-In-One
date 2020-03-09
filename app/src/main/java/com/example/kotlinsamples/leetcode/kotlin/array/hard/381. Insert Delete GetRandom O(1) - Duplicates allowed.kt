@@ -26,7 +26,7 @@ private class RandomizedCollection() {
             map[last]?.add(it)
             map[last]?.remove(list.lastIndex)
         }
-        list.removeAt(list.lastIndex) //todo: removeAt() v/s remove()
+        list.removeAt(list.lastIndex) // todo: removeAt() v/s remove()
         return true
     }
 
@@ -34,5 +34,4 @@ private class RandomizedCollection() {
     fun getRandom(): Int {
         return list[Random.nextInt(list.size)]
     }
-
 }

@@ -5,13 +5,13 @@ private fun checkSubarraySum(nums: IntArray, k: Int): Boolean {
         var s = nums[i]
         for (j in i + 1 until nums.size) {
             s += nums[j]
-            if (s == k || (k != 0 && s % k == 0)) return true;
+            if (s == k || (k != 0 && s % k == 0)) return true
         }
     }
     return false
 }
 
-//use remainder theorem
+// use remainder theorem
 private fun checkSubarraySum2(nums: IntArray, k: Int): Boolean {
     var sum = 0
     val map: HashMap<Int, Int> = HashMap()
