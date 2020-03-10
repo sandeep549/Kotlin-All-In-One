@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(Apps.compileSdk)
     defaultConfig {
         applicationId = "com.example.kotlinsamples"
-        minSdkVersion(21)
-        targetSdkVersion(28)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Apps.minSdk)
+        targetSdkVersion(Apps.targetSdk)
+        versionCode = Apps.versionCode
+        versionName = Apps.versionName
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,9 +28,8 @@ dependencies {
     implementation("com.android.support:appcompat-v7:28.0.0")
     implementation("com.android.support.constraint:constraint-layout:1.1.3")
 
-    implementation("com.google.code.gson:gson:2.8.5")
+    implementation("com.google.code.gson:gson:${Versions.gson}")
     implementation("org.danilopianini:gson-extras:0.2.1")
-    
     testImplementation("junit:junit:4.12")
     androidTestImplementation("com.android.support.test:runner:1.0.2")
     androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
