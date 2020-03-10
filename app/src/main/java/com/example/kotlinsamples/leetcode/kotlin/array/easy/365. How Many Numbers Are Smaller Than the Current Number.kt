@@ -12,7 +12,6 @@ private fun countSmaller(nums: IntArray): List<Int> {
         var i = 0
         var j = 0
 
-
         while (i < left.size || j < right.size) {
             if (j == right.size || i < left.size && left[i].second <= right[j].second) {
                 arr[i + j] = left[i]
