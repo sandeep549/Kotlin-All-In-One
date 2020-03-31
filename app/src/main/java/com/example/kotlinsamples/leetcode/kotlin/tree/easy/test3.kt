@@ -1,6 +1,49 @@
 package com.example.kotlinsamples.leetcode.kotlin.tree.easy
 
-import kotlin.math.abs
+class Solution {
+    fun removeInvalidParentheses(s: String): List<String> {
+        var set = mutableSetOf<String>()
+        var min = Int.MAX_VALUE
+        fun recur(
+            i: Int, // current index
+            l: Int, // left count
+            r: Int, // right count
+            exp: StringBuilder, // current expression
+            remove: Int
+        ) // remove count
+        {
+            if (i == s.length) {
+                if (l == r) { // exp is valid
+                    if (remove <= min) {
+                        var ans = exp.toString()
+                        if (remove < min) {
+                            set.clear()
+                            min = remove
+                        }
+                        set.add(ans)
+                    }
+                }
+            } else {
+                var ch = s[i]
+                var len = exp.length
+                if (ch != '(' && ch != ')') {
+                    exp.append(ch)
+                    recur(i + 1, l, r, exp, remove)
+                    exp.deleteCharAt(len)
+                } else {
+                    // delete current char and consider
+                    recur(i + 1, l, r, exp, remove + 1)
+                    exp.append(ch)
+                    if (ch == '(') recur(i + 1, l + 1, r, exp, remove)
+                    else if (ch == ')') recur(i + 1, l, r + 1, exp, remove)
+                    exp.deleteCharAt(len)
+                }
+            }
+        }
+        recur(0, 0, 0, StringBuilder(), 0)
+        return set.toList()
+    }
+}
 
 fun countNegatives(grid: Array<IntArray>): Int {
     var count = 0
@@ -22,13 +65,13 @@ fun countNegatives(grid: Array<IntArray>): Int {
         r--
         c--
     }
-    return count;
+    return count
 }
 
 class ProductOfNumbers() {
 
     var product = mutableListOf<Double>()
-    var zero = mutableListOf<Int>() //index of 0's
+    var zero = mutableListOf<Int>() // index of 0's
 
     init {
         product.add(1.toDouble())
@@ -48,9 +91,7 @@ class ProductOfNumbers() {
         if (zero[zero.lastIndex] >= start) return 0
         return (product[product.lastIndex] / product[product.lastIndex - k]).toInt()
     }
-
 }
 
 fun main() {
-    abs()
 }
