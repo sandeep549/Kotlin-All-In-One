@@ -31,6 +31,7 @@ subprojects {
     // Optionally configure plugin
     ktlint {
         debug.set(true)
+        android.set(true)
     }
 }
 
